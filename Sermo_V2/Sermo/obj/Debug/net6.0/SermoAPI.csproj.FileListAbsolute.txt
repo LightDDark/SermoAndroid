@@ -1,0 +1,96 @@
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/appsettings.Development.json
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/appsettings.json
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/SermoAPI.exe
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/SermoAPI.deps.json
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/SermoAPI.runtimeconfig.json
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/SermoAPI.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/SermoAPI.pdb
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Humanizer.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Microsoft.OpenApi.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/MySqlConnector.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Domain.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Repository.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Services.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Services.pdb
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Domain.pdb
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/bin/Debug/net6.0/Repository.pdb
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.csproj.AssemblyReference.cache
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.AssemblyInfoInputs.cache
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.AssemblyInfo.cs
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.csproj.CoreCompileInputs.cache
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/staticwebassets.build.json
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/staticwebassets.development.json
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/scopedcss/bundle/SermoAPI.styles.css
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.csproj.CopyComplete
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/refint/SermoAPI.dll
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.pdb
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/SermoAPI.genruntimeconfig.cache
+C:/Users/myavr/Desktop/New folder (2)/Sermo_V2/Sermo/obj/Debug/net6.0/ref/SermoAPI.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/appsettings.Development.json
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/appsettings.json
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/SermoAPI
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/SermoAPI.deps.json
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/SermoAPI.runtimeconfig.json
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/SermoAPI.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/SermoAPI.pdb
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Humanizer.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/MySqlConnector.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Domain.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Repository.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Services.dll
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Services.pdb
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Domain.pdb
+/Users/maayan/Projects/Sermo/Sermo/bin/Debug/net6.0/Repository.pdb
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.csproj.AssemblyReference.cache
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.AssemblyInfoInputs.cache
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.AssemblyInfo.cs
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.csproj.CoreCompileInputs.cache
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.MvcApplicationPartsAssemblyInfo.cs
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.MvcApplicationPartsAssemblyInfo.cache
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/staticwebassets.build.json
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/staticwebassets.development.json
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/scopedcss/bundle/SermoAPI.styles.css
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.csproj.CopyComplete
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.dll
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/refint/SermoAPI.dll
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.pdb
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/SermoAPI.genruntimeconfig.cache
+/Users/maayan/Projects/Sermo/Sermo/obj/Debug/net6.0/ref/SermoAPI.dll

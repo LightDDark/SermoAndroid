@@ -1,0 +1,51 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{4CFA4C92-B832-4DA9-9611-302C8EF8D8FD}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.SermoAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SermoAPP/Views/HomePage/Index.cshtml">
+    <Files>
+      <File FileName="Sermo/Hubs/MessageHub.cs" Line="1" Column="1" />
+      <File FileName="SermoReact/src/index.js" Line="1" Column="1" />
+      <File FileName="SermoAPP/Program.cs" Line="25" Column="64" />
+      <File FileName="Domain/Rate/Ratings.cs" Line="16" Column="41" />
+      <File FileName="SermoAPP/Controllers/RatingsController.cs" Line="20" Column="10" />
+      <File FileName="SermoAPP/Views/Ratings/Index.cshtml" Line="13" Column="9" />
+      <File FileName="Sermo/Program.cs" Line="21" Column="1" />
+      <File FileName="Repository/Migrations/20220530160017_rt.cs" Line="13" Column="34" />
+      <File FileName="SermoAPP/Views/Ratings/Create.cshtml" Line="15" Column="77" />
+      <File FileName="SermoAPP/wwwroot/index.html" Line="18" Column="8" />
+      <File FileName="SermoAPP/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="SermoAPP/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="SermoAPP/wwwroot/robots.txt" Line="1" Column="1" />
+      <File FileName="SermoAPP/Controllers/HomepageController.cs" Line="14" Column="10" />
+      <File FileName="SermoAPP/Views/HomePage/Index.cshtml" Line="13" Column="1" />
+      <File FileName="SermoAPP/Views/Shared/_Layout.cshtml" Line="41" Column="1" />
+      <File FileName="SermoAPP/Views/Shared/_Layout.cshtml.css" Line="1" Column="1" />
+      <File FileName="SermoAPP/Views/Ratings/in.cs" Line="32" Column="6" />
+      <File FileName="SermoAPP/Views/Rating/search.cshtml" Line="26" Column="64" />
+      <File FileName="SermoAPP/appsettings.json" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Sermo" expanded="True" selected="True">
+            <Node name="SermoAPP" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="HomePage" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.SermoAPP PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+</Properties>

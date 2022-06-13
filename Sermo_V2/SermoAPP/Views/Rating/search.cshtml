@@ -1,0 +1,32 @@
+﻿@page
+@model SermoAPP.Views.Rating.searchR
+
+<head>
+</head>
+<body>
+
+
+    <h1 class="card-body">Reviews</h1>
+    <img id="logo" src="@Url.Content("~/ratings.png")" alt="background" width="150" height="50" style="border-radius:10px;" />
+    <p>
+        <a class="btn btn-secondary btn-sm" asp-action="Search">Search Review</a>
+    </p>
+    <form>
+        <p>
+            Content: <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <table class="table">
+        <tbody>
+            @foreach (var item in Model.ratings)
+                {
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ratings)
+                </th>
+            </tr>
+                }
+                    </tbody>
+        </table>
+</body>

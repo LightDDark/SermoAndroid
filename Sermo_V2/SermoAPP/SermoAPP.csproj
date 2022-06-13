@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Services\Services.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\robots.txt" />
+    <Content Remove="wwwroot\static\css\main.36668410.css" />
+    <Content Remove="wwwroot\static\css\main.36668410.css.map" />
+    <Content Remove="wwwroot\static\js\787.46944220.chunk.js" />
+    <Content Remove="wwwroot\static\js\787.46944220.chunk.js.map" />
+    <Content Remove="wwwroot\static\js\main.82b54d16.js" />
+    <Content Remove="wwwroot\static\js\main.82b54d16.js.LICENSE.txt" />
+    <Content Remove="wwwroot\static\js\main.82b54d16.js.map" />
+    <Content Remove="wwwroot\static\media\background_chat.b58e4f2228d77e236a2b.png" />
+    <Content Remove="wwwroot\static\media\background.fc782fb1b052034f2e3b.jpeg" />
+    <Content Remove="wwwroot\static\media\message_icon.216de88788f8e468ff57.jpeg" />
+    <Content Remove="wwwroot\static\media\options_icon.d64c052d68d46c3ec985.png" />
+    <Content Remove="wwwroot\static\" />
+    <Content Remove="wwwroot\background.jpeg" />
+    <Content Remove="wwwroot\ratings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Sermo\" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <None Remove="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\robots.txt" />
+    <None Include="wwwroot\static\css\main.36668410.css" />
+    <None Include="wwwroot\static\css\main.36668410.css.map" />
+    <None Include="wwwroot\static\js\787.46944220.chunk.js" />
+    <None Include="wwwroot\static\js\787.46944220.chunk.js.map" />
+    <None Include="wwwroot\static\js\main.82b54d16.js" />
+    <None Include="wwwroot\static\js\main.82b54d16.js.LICENSE.txt" />
+    <None Include="wwwroot\static\js\main.82b54d16.js.map" />
+    <None Include="wwwroot\static\media\background_chat.b58e4f2228d77e236a2b.png" />
+    <None Include="wwwroot\static\media\background.fc782fb1b052034f2e3b.jpeg" />
+    <None Include="wwwroot\static\media\message_icon.216de88788f8e468ff57.jpeg" />
+    <None Include="wwwroot\static\media\options_icon.d64c052d68d46c3ec985.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Condition="'$(ExcludeConfigFilesFromBuildOutput)'!='true'" Update="wwwroot\asset-manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Condition="'$(ExcludeConfigFilesFromBuildOutput)'!='true'" Update="wwwroot\manifest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\static\" />
+    <Folder Include="Views\HomePage\" />
+  </ItemGroup>
+</Project>

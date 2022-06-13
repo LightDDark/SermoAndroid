@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zgBEtRYB4mabWIy7mZCmSGuHrR7OZuQfdJt4J0vbSYA=",
+  "Source": "SermoAPI",
+  "BasePath": "_content/SermoAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

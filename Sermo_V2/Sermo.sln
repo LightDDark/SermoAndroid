@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SermoAPI", "Sermo\SermoAPI.csproj", "{A18A51E3-5792-48C1-A8B7-D63AA0F99623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SermoAPP", "..\Sermo\SermoAPP\SermoAPP.csproj", "{4CFA4C92-B832-4DA9-9611-302C8EF8D8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Sermo\Domain\Domain.csproj", "{B5FE3B13-EAFD-442B-B196-E6CA4C666F94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "..\Sermo\Repository\Repository.csproj", "{800DBF6C-A87C-406C-8760-02161325A3C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "..\Sermo\Services\Services.csproj", "{29E5B24A-B547-48D5-8005-D96228F73D6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SermoReact", "..\Sermo\SermoReact\SermoReact.csproj", "{F81091DF-6041-4C33-A78E-899AF498FDD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A18A51E3-5792-48C1-A8B7-D63AA0F99623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A18A51E3-5792-48C1-A8B7-D63AA0F99623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A18A51E3-5792-48C1-A8B7-D63AA0F99623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A18A51E3-5792-48C1-A8B7-D63AA0F99623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFA4C92-B832-4DA9-9611-302C8EF8D8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFA4C92-B832-4DA9-9611-302C8EF8D8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFA4C92-B832-4DA9-9611-302C8EF8D8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFA4C92-B832-4DA9-9611-302C8EF8D8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5FE3B13-EAFD-442B-B196-E6CA4C666F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5FE3B13-EAFD-442B-B196-E6CA4C666F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5FE3B13-EAFD-442B-B196-E6CA4C666F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5FE3B13-EAFD-442B-B196-E6CA4C666F94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{800DBF6C-A87C-406C-8760-02161325A3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800DBF6C-A87C-406C-8760-02161325A3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800DBF6C-A87C-406C-8760-02161325A3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800DBF6C-A87C-406C-8760-02161325A3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E5B24A-B547-48D5-8005-D96228F73D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E5B24A-B547-48D5-8005-D96228F73D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E5B24A-B547-48D5-8005-D96228F73D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E5B24A-B547-48D5-8005-D96228F73D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F81091DF-6041-4C33-A78E-899AF498FDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81091DF-6041-4C33-A78E-899AF498FDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81091DF-6041-4C33-A78E-899AF498FDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81091DF-6041-4C33-A78E-899AF498FDD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE37E7D2-6E17-4F9B-81E8-533959807C9A}
+	EndGlobalSection
+EndGlobal
