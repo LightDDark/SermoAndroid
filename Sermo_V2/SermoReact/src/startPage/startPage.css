@@ -1,0 +1,116 @@
+.Forms {
+  background-image: url(background.jpeg);
+  background-position: right bottom, left top;
+  text-align: left;
+  background-size: contain;
+  display: block;
+  margin: 70px 250px;
+  padding: 50px 100px;
+  border-radius: 50px;
+}
+.Welcome {
+  font-size: 25px;
+  display: block;
+}
+
+.User {
+  font-size: 20px;
+  font-family: "Century Gothic", monospace;
+  background-color: steelblue;
+  padding: 12px 50px;
+  border-radius: 100px;
+}
+
+.Pass {
+  font-size: 20px;
+  font-family: "Century Gothic", monospace;
+  box-sizing: content-box;
+  background-color: lightsteelblue;
+  padding: 12px 50px;
+  border-radius: 100px;
+}
+input[type="username"] {
+  width: 85%;
+  padding: 12px 20px;
+  margin: 8px 20px;
+  box-sizing: border-box;
+  border: none;
+  background-color: lavenderblush;
+  color: black;
+}
+input[type="password"] {
+  width: 85%;
+  padding: 12px 20px;
+  margin: 8px 20px;
+  box-sizing: border-box;
+  border: none;
+  background-color: lavenderblush;
+  color: black;
+}
+
+.LogButton {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: block;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  max-width: 20%;
+  overflow: visible;
+  padding: 12px 50px;
+  position: center;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+  margin-left: 270px;
+}
+
+.LogButton a {
+  display: block;
+  width: 100%;
+  line-height: 25px;
+  text-decoration: none;
+}
+.LogButton:hover {
+  background: #f6f9fe;
+  color: #000000;
+  text-decoration: none;
+  display: block;
+}
+
+.LogButton:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+  text-decoration: none;
+  display: block;
+}
+
+.Unreg {
+  padding: 20px 30px;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  background-color: lavenderblush;
+  margin-left: 200px;
+  margin-right: 250px;
+  border-radius: 24px;
+}

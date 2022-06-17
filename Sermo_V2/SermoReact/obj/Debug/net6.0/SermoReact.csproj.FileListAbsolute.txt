@@ -1,0 +1,12 @@
+/Users/maayan/Projects/Sermo/SermoReact/bin/Debug/net6.0/SermoReact.deps.json
+/Users/maayan/Projects/Sermo/SermoReact/bin/Debug/net6.0/SermoReact.dll
+/Users/maayan/Projects/Sermo/SermoReact/bin/Debug/net6.0/SermoReact.pdb
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.csproj.AssemblyReference.cache
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.AssemblyInfoInputs.cache
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.AssemblyInfo.cs
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.csproj.CoreCompileInputs.cache
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.dll
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/refint/SermoReact.dll
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.pdb
+/Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/ref/SermoReact.dll
