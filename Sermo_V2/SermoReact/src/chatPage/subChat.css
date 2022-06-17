@@ -1,0 +1,139 @@
+.column {
+  float: left;
+  padding: 10px;
+  color: #3c4043;
+  background-color: lavenderblush;
+}
+.col-9 {
+  float: left;
+  margin-left: 0;
+  padding: 20px;
+  width: 75%;
+  height: 500px;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  float: left;
+  width: 25%;
+  height: 500px;
+  background: #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 600px) {
+  nav,
+  article {
+    width: 100%;
+    height: auto;
+  }
+}
+.header {
+  background-color: #f1f1f1;
+  padding: 0;
+  align-items: normal;
+  text-align: center;
+  color: steelblue;
+}
+input[type="text"] {
+  font-size: 16px;
+  background-color: white;
+  border-radius: 20px;
+  text-indent: 20px;
+}
+.MsgInput{
+  width: 85%;
+  background-image: url(message_icon.jpeg);
+  background-size: 30px;
+  background-position: 5px 0;
+  background-repeat: no-repeat;
+}
+
+.Search-barr{
+  height: content-box;
+  width: fit-content;
+  margin-right: 70px;
+  background-image: url(search_icon.png);
+  background-size: 20px;
+  background-position: 5px 4px;
+  background-repeat: no-repeat;
+}
+.Send {
+  background-color: lightsteelblue;
+  border-radius: 8px;
+  border-width: 0;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 70px;
+}
+.Options {
+  background-image: url(options_icon.png);
+  background-size: 35px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-color: gainsboro;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 20px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: auto;
+  float: left;
+}
+
+.card-body {
+  border-style: solid;
+  border-color: lightgray;
+  border-radius: 20px;
+  box-shadow: #3c4043;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+.card-title {
+  display: block;
+  text-align: left;
+  color: midnightblue;
+}
+.card-subtitle {
+  display: block;
+  text-align: left;
+  color: darkgray;
+}
+.chat {
+  display: block;
+  background-image: url(background_chat.png);
+  background-size: 500px;
+  background-position: center;
+  background-repeat: repeat;
+  width: 100%;
+  height: 520px;
+  overflow-y: scroll;
+}

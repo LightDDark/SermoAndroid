@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/maayan/Projects/Sermo/Repository/Repository.csproj": {}
+    "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "/Users/maayan/Projects/Sermo/Domain/Domain.csproj": {
+    "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maayan/Projects/Sermo/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/maayan/Projects/Sermo/Domain/Domain.csproj",
-        "packagesPath": "/Users/maayan/.nuget/packages/",
-        "outputPath": "/Users/maayan/Projects/Sermo/Domain/obj/",
+        "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\myavr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/maayan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\myavr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,34 +74,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/maayan/Projects/Sermo/Repository/Repository.csproj": {
+    "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maayan/Projects/Sermo/Repository/Repository.csproj",
+        "projectUniqueName": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "/Users/maayan/Projects/Sermo/Repository/Repository.csproj",
-        "packagesPath": "/Users/maayan/.nuget/packages/",
-        "outputPath": "/Users/maayan/Projects/Sermo/Repository/obj/",
+        "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\myavr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/maayan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\myavr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/maayan/Projects/Sermo/Domain/Domain.csproj": {
-                "projectPath": "/Users/maayan/Projects/Sermo/Domain/Domain.csproj"
+              "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj"
               }
             }
           }
@@ -144,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

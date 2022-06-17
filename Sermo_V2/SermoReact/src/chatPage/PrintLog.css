@@ -1,0 +1,82 @@
+:root {
+    --main-light-color:lightgray;
+    --main-dark-color: lightgreen;
+    --main-background-color: black;
+}
+.Mine{
+    height: fit-content;
+    margin:2vh;
+}
+.Other{
+    height: fit-content;
+    margin:2vh;
+}
+
+body{
+    background-color: var(--main-background-color);
+}
+
+.box{
+    width: 80vh;
+    height:fit-content;
+    /* border: solid black; */
+    margin-left: 100px;
+    position: relative;
+    display: block;
+}
+
+.center{
+    height: fit-content;
+}
+
+.dialog-1{
+    width: fit-content;
+    max-width: 50%;
+    border-radius: 10%;
+    display: block;
+    padding:5px;
+    min-width: 7vw;
+}
+.Mes-img{
+    position: inherit;
+    width: 200px;
+    height: 300px;
+    object-fit: contain;
+}
+/*.left-point{
+    width: 0;
+    height: 0;
+    border-left: 1vh solid transparent;
+    border-right: 1vh solid transparent;
+    border-top: 6vh solid var(--main-dark-color);
+    position: relative;
+    left: -10%;
+    transform: rotate(60deg);
+}*/
+.Mine{
+    background-color: var(--main-dark-color);
+    float:left;
+    border-radius: 10%;
+}
+.Other{
+    background-color: var(--main-light-color);
+    float: right;
+    border-radius: 10%;
+    margin-right: auto;
+}
+.Mes[type=text]{
+    text-align: left;
+    color: black;
+    position: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    display: block;
+    font-size: 25px;
+}
+
+.timer{
+    color: dimgray;
+    float: right;
+    display: block;
+    position: relative;
+}
