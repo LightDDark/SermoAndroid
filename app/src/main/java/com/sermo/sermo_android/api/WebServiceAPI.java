@@ -2,10 +2,12 @@ package com.sermo.sermo_android.api;
 
 
 import com.sermo.sermo_android.IO.InMessage;
+import com.sermo.sermo_android.IO.LoginReq;
 import com.sermo.sermo_android.IO.OutContact;
 import com.sermo.sermo_android.IO.OutInvite;
 import com.sermo.sermo_android.IO.OutMessage;
 import com.sermo.sermo_android.IO.OutTransfer;
+import com.sermo.sermo_android.IO.RegisterReq;
 import com.sermo.sermo_android.enteties.Contact;
 
 import java.util.List;
@@ -19,6 +21,17 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface WebServiceAPI {
+    // Login & Register
+    @POST("users/login")
+    Call<String> login(@Body LoginReq request);
+
+    @POST("users")
+    Call<Void> register(@Body RegisterReq request);
+
+    @GET("users/{id}")
+    Call<LoginReq> getUser(@Path("id") String id);
+
+    // Contacts
     @GET("contacts")
     Call<List<Contact>> getContacts();
 
@@ -34,6 +47,7 @@ public interface WebServiceAPI {
     @DELETE("contacts/{id}")
     Call<Void> deleteContact(@Path("id") String id);
 
+    // Messages
     @GET("contacts/{id}/messages")
     Call<List<InMessage>> getMessages(@Path("id") String id);
 
@@ -49,6 +63,7 @@ public interface WebServiceAPI {
     @DELETE("contacts/{id}/messages/{id2}")
     Call<Void> deleteMessage(@Path("id") String contactId, @Path("id2") int msgId);
 
+    // IO
     @POST("invitations")
     Call<Void> invite(@Body OutInvite contact);
 
