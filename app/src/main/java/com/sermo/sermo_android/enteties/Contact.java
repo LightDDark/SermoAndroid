@@ -1,5 +1,7 @@
 package com.sermo.sermo_android.enteties;
 
+import android.widget.ImageView;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -13,6 +15,7 @@ public class Contact {
     String server;
     String lastMsg;
     Date lastDate;
+    ImageView profilePic;
 
     public Contact(String id, String name, String server) {
         this.id = id;
@@ -54,6 +57,9 @@ public class Contact {
 
     public void setLastMsg(String lastMsg) {
         this.lastMsg = lastMsg;
+    }
+    public ImageView getProfilePic(){
+        return this.profilePic;
     }
 
     public void setLastDate(Date lastDate) {

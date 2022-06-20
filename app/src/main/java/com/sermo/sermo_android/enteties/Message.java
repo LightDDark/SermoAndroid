@@ -41,6 +41,10 @@ public class Message {
     public Date getCreated() {
         return created;
     }
+    public long getCreatedLong() {
+        return created.getTime();
+    }
+
 
     public void setCreated(Date created) {
         this.created = created;
