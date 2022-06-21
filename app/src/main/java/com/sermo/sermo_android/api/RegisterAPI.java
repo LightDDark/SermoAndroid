@@ -16,14 +16,17 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterAPI {
-    private final MutableLiveData<Boolean> registerStatus;
-    private final MutableLiveData<Boolean> idStatus;
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
 
-    public RegisterAPI(MutableLiveData<Boolean> registerStatus, MutableLiveData<Boolean> idStatus) {
-        this.registerStatus = registerStatus;
-        this.idStatus = idStatus;
+    public interface CallbackFromRegisterApi {
+        void onRegisterCompleted(boolean status);
+    }
+
+    private CallbackFromRegisterApi callback;
+
+    public RegisterAPI(CallbackFromRegisterApi callback) {
+        this.callback = callback;
         retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
                 .callbackExecutor(Executors.newSingleThreadExecutor())
@@ -32,16 +35,17 @@ public class RegisterAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void Register(String userId, String nick, String password) {
+    public void register(String userId, String nick, String password) {
         Call<Void> call = webServiceAPI.register(new RegisterReq(userId, password, nick));
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
-                registerStatus.postValue(response.isSuccessful());
+                callback.onRegisterCompleted(response.isSuccessful());
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
+                callback.onRegisterCompleted(false);
             }
         });
     }
@@ -51,7 +55,7 @@ public class RegisterAPI {
         call.enqueue(new Callback<LoginReq>() {
             @Override
             public void onResponse(Call<LoginReq> call, Response<LoginReq> response) {
-                idStatus.postValue(!response.isSuccessful());
+//                idStatus.postValue(!response.isSuccessful());
             }
 
             @Override
