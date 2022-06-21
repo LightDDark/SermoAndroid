@@ -21,10 +21,7 @@
             android:name=".ContactsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_message_chat"
-            android:exported="false" />
-        <activity
-            android:name=".message_chat"
+            android:name=".MessageActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
