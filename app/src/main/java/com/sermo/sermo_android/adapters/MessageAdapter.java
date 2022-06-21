@@ -19,39 +19,38 @@ import androidx.constraintlayout.core.motion.utils.Utils;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MessageAdapter extends RecyclerView.Adapter {
-    private class IncomingMessageViewHolder extends RecyclerView.ViewHolder{
-        //private final TextView contactId;
-        private final TextView content;
-        private final TextView created;
-        private final ImageView profilePic;
+     class IncomingMessageViewHolder extends RecyclerView.ViewHolder{
+        private  TextView contactName;
+        private  TextView content;
+        private  TextView created;
+        private  ImageView profilePic;
 
         private IncomingMessageViewHolder(View itemView){
             super(itemView);
-            //contactId = itemView.findViewById(R.id.contactId);
-            content = itemView.findViewById(R.id.content);
-            created = itemView.findViewById(R.id.created);
-            profilePic = itemView.findViewById(R.id.contact_profile);
+            contactName = (TextView) itemView.findViewById(R.id.contact_nickname);
+            content = (TextView) itemView.findViewById(R.id.content);
+            created = (TextView) itemView.findViewById(R.id.created);
+            profilePic = (ImageView) itemView.findViewById(R.id.contact_profile);
         }
     }
-    private class OutgoingMessageViewHolder extends RecyclerView.ViewHolder{
-        //private final TextView contactId;
-        private final TextView content;
-        private final TextView created;
+     class OutgoingMessageViewHolder extends RecyclerView.ViewHolder{
+        private  TextView contactName;
+        private  TextView content;
+        private  TextView created;
 
         private OutgoingMessageViewHolder(View itemView){
             super(itemView);
-            //contactId = itemView.findViewById(R.id.contactId);
-            content = itemView.findViewById(R.id.content);
-            created = itemView.findViewById(R.id.created);
+            contactName = (TextView) itemView.findViewById(R.id.contact_nickname);
+            content = (TextView) itemView.findViewById(R.id.content);
+            created = (TextView) itemView.findViewById(R.id.created);
         }
     }
     private final LayoutInflater messageLayout;
     private ArrayList<Message> messages;
-    //1 is for incoming, 0 is outgoing
-    private int isIncoming;
     public MessageAdapter(Context context, ArrayList<Message> messageList){
         messageLayout = LayoutInflater.from(context);
-        this.messages = messageList;
+        this.messages = new ArrayList<>();
+        this.messages.addAll(messageList);
     }
     @NonNull
     @Override
@@ -70,35 +69,30 @@ public class MessageAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            if(holder.getItemViewType() == 0) {
-                final Message current = messages.get(position);
-                OutgoingMessageViewHolder outHolder = (OutgoingMessageViewHolder)holder;
-                //outHolder.contactId.setText(current.getContactId());
-                outHolder.content.setText(current.getContent());
-                String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(current.getCreated());
-                outHolder.created.setText(currentDateTimeString);
+        Message current = messages.get(position);
+        if(current.isSent()) {
+                ((OutgoingMessageViewHolder) holder).contactName.setText(current.getContactId());
+                ((OutgoingMessageViewHolder) holder).content.setText(current.getContent());
+            //((OutgoingMessageViewHolder)holder).created.setText(currentDateTimeString);
             }
-            else if(holder.getItemViewType() == 1) {
-                final Message current = messages.get(position);
-                IncomingMessageViewHolder inHolder = (IncomingMessageViewHolder)holder;
-                //inHolder.contactId.setText(current.getContactId());
-                inHolder.content.setText(current.getContent());
-                String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(current.getCreated());
-                inHolder.created.setText(currentDateTimeString);
-                inHolder.profilePic.setImageResource(R.drawable.profile);
+            else{
+                ((IncomingMessageViewHolder) holder).contactName.setText(current.getContactId());
+                ((IncomingMessageViewHolder) holder).content.setText(current.getContent());
+            //((IncomingMessageViewHolder)holder).created.setText(currentDateTimeString);
+                //((IncomingMessageViewHolder)holder).profilePic.setImageResource(R.drawable.profile);
             }
+        //String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(current.getCreated());
     }
-
 
     @Override
     public int getItemCount() {
-        return 0;
+        return messages.size();
     }
     @Override
     public int getItemViewType(int position) {
         Message msg = messages.get(position);
         if (msg.isSent()){
-            return 0;
+            return 2;
         }
         return 1;
     }

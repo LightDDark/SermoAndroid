@@ -14,6 +14,7 @@
         app:layout_constrainedHeight="false"
         android:background="@drawable/background_chat"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar_chat"
+        tools:listitem="@layout/sender_chat"
          />
 
     <TextView
@@ -69,7 +70,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <ImageView
             android:id="@+id/contact_profile"
@@ -88,7 +91,6 @@
             android:gravity="start|center_vertical"
             android:paddingStart="20dp"
             android:paddingBottom="10dp"
-            android:text="Maayan"
             android:textColor="@color/black"
             android:textSize="20dp" />
 

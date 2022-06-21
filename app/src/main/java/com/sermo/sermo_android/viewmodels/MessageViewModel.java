@@ -8,6 +8,7 @@ import com.sermo.sermo_android.enteties.Contact;
 import com.sermo.sermo_android.enteties.Message;
 import com.sermo.sermo_android.repositories.MessageRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MessageViewModel extends ViewModel {

@@ -1,6 +1,8 @@
 package com.sermo.sermo_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,12 +12,13 @@ import android.widget.LinearLayout;
 
 import com.sermo.sermo_android.adapters.ContactAdapter;
 import com.sermo.sermo_android.enteties.Contact;
+import com.sermo.sermo_android.viewmodels.ContactViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContactsActivity extends AppCompatActivity {
-
+    ContactViewModel contactViewModel;
     RecyclerView recycleViewContacts;
     ArrayList<Contact> contacts = new ArrayList<>();
 
@@ -26,6 +29,13 @@ public class ContactsActivity extends AppCompatActivity {
         setContentView(R.layout.contacts_layout);
         // Lookup the recyclerview in activity layout
         recycleViewContacts = (RecyclerView) findViewById(R.id.contact_recycler);
+        contactViewModel = new ViewModelProvider(this).get(ContactViewModel.class);
+        contactViewModel.getContacts().observe(this, new Observer<List<Contact>>() {
+            @Override
+            public void onChanged(List<Contact> cons) {
+                contacts.addAll(cons);
+            }
+        });
         recycleViewContacts.setLayoutManager(new LinearLayoutManager(this));
         recycleViewContacts.setHasFixedSize(true);
         // Initialize contacts
