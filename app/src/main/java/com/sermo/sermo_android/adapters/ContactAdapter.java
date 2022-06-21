@@ -3,6 +3,7 @@ import com.sermo.sermo_android.R;
 import com.sermo.sermo_android.enteties.Contact;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
         private ContactViewHolder(View itemView){
             super(itemView);
-            contactCard = (Button)itemView.findViewById(R.id.message_button);
+            contactCard = itemView.findViewById(R.id.message_button);
         }
     }
     private final LayoutInflater contactLayout;
@@ -47,6 +48,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             textView.setText(contact.getName());
             Button button = holder.contactCard;
             button.setText(contact.getName());
+            button.setOnClickListener(v -> {
+                Intent clickIntent = new Intent(v.getContext(), MessageAdapter.class);
+                v.getContext().startActivity(clickIntent);
+            });
         }
     }
 
