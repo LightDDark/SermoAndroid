@@ -11,6 +11,7 @@ import com.sermo.sermo_android.R;
 
 import java.util.concurrent.Executors;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -47,6 +48,7 @@ public class LoginAPI {
                     editor.putString(context.getString(R.string.userId), userId);
                     editor.putString(context.getString(R.string.token), token);
                     editor.apply();
+                    setFirebase();
                 }
                 loginStatus.postValue(b);
             }
@@ -55,5 +57,20 @@ public class LoginAPI {
             public void onFailure(Call<String> call, Throwable t) {
             }
         });
+    }
+
+    private void setFirebase() {
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String token = sharedPref.getString(context.getString(R.string.Firebase), "");
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
+        retrofit = new Retrofit.Builder()
+                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .client(client)
+                .callbackExecutor(Executors.newSingleThreadExecutor())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        retrofit.create(WebServiceAPI.class).setFirebase(token);
     }
 }
