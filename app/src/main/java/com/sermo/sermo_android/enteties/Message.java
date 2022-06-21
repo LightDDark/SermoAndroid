@@ -40,9 +40,6 @@ public class Message {
     public String getCreated() {
         return created;
     }
-    public long getCreatedLong() {
-        return created.getTime();
-    }
 
 
     public void setCreated(String created) {

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import androidx.annotation.NonNull;
@@ -45,10 +46,10 @@ public class MessageAdapter extends RecyclerView.Adapter {
         }
     }
     private final LayoutInflater messageLayout;
-    private List<Message> messages;
+    private ArrayList<Message> messages;
     //1 is for incoming, 0 is outgoing
     private int isIncoming;
-    public MessageAdapter(Context context, List<Message> messageList){
+    public MessageAdapter(Context context, ArrayList<Message> messageList){
         messageLayout = LayoutInflater.from(context);
         this.messages = messageList;
     }
@@ -69,7 +70,6 @@ public class MessageAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (messages != null){
             if(holder.getItemViewType() == 0) {
                 final Message current = messages.get(position);
                 OutgoingMessageViewHolder outHolder = (OutgoingMessageViewHolder)holder;
@@ -87,7 +87,6 @@ public class MessageAdapter extends RecyclerView.Adapter {
                 inHolder.created.setText(currentDateTimeString);
                 inHolder.profilePic.setImageResource(R.drawable.profile);
             }
-        }
     }
 
 
