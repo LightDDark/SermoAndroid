@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/profilePic_background.xml" value="0.2445" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_message_chat.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/contact_card_layout.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/contacts_layout.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/reciever_chat.xml" value="0.30885416666666665" />
         <entry key="app/src/main/res/layout/sender_chat.xml" value="0.30885416666666665" />

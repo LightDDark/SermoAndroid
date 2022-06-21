@@ -48,8 +48,9 @@ public class MessageAdapter extends RecyclerView.Adapter {
     private List<Message> messages;
     //1 is for incoming, 0 is outgoing
     private int isIncoming;
-    public MessageAdapter(Context context){
+    public MessageAdapter(Context context, List<Message> messageList){
         messageLayout = LayoutInflater.from(context);
+        this.messages = messageList;
     }
     @NonNull
     @Override
