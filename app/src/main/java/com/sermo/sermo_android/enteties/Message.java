@@ -3,7 +3,6 @@ package com.sermo.sermo_android.enteties;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
 
 @Entity
 public class Message {
@@ -11,10 +10,10 @@ public class Message {
     int id;
     String contactId;
     String content;
-    Date created;
+    String created;
     boolean sent;
 
-    public Message(int id, String contactId, String content, Date created, boolean sent) {
+    public Message(int id, String contactId, String content, String created, boolean sent) {
         this.id = id;
         this.content = content;
         this.created = created;
@@ -38,11 +37,11 @@ public class Message {
         this.content = content;
     }
 
-    public Date getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 
