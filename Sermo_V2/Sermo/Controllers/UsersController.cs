@@ -36,7 +36,7 @@ namespace SermoAPI.Controllers
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(string id)
+        public async Task<ActionResult<LogUser>> GetUser(string id)
         {
             User? user = await _service.GetUser(id);
 
@@ -44,8 +44,8 @@ namespace SermoAPI.Controllers
             {
                 return NotFound();
             }
-
-            return user;
+            LogUser temp = new LogUser() { Id = user.Id, Password = " "};
+            return temp;
         }
 
         // POST: api/Users

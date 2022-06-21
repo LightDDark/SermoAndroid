@@ -15,6 +15,7 @@ import com.sermo.sermo_android.rooms.ContactDao;
 import java.util.List;
 import java.util.concurrent.Executors;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,9 +31,10 @@ public class ContactAPI {
      public ContactAPI(MutableLiveData<List<Contact>> contactListData, ContactDao dao) {
          this.contactListData = contactListData;
          this.dao = dao;
-
+         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
          retrofit = new Retrofit.Builder()
                 .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                 .client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

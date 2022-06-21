@@ -1,14 +1,12 @@
 package com.sermo.sermo_android.IO;
 
-import java.util.Date;
-
 public class InMessage {
     int id;
     String content;
-    Date created;
+    String created;
     boolean sent;
 
-    public InMessage(int id, String content, Date created, boolean sent) {
+    public InMessage(int id, String content, String created, boolean sent) {
         this.id = id;
         this.content = content;
         this.created = created;
@@ -31,11 +29,11 @@ public class InMessage {
         this.content = content;
     }
 
-    public Date getCreated() {
+    public String getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 

@@ -1,28 +1,27 @@
 package com.sermo.sermo_android.enteties;
 
-import android.widget.ImageView;
-
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
 
 @Entity
 public class Contact {
     @PrimaryKey
+            @NonNull
     String id;
     String name;
     String server;
     String lastMsg;
-    Date lastDate;
-    ImageView profilePic;
+    String lastDate;
 
-    public Contact(String id, String name, String server) {
+    public Contact(@NonNull String id, String name, String server) {
         this.id = id;
         this.name = name;
         this.server = server;
     }
 
+    @NonNull
     public String getId() {
         return id;
     }
@@ -35,7 +34,7 @@ public class Contact {
         return lastMsg;
     }
 
-    public Date getLastDate() {
+    public String getLastDate() {
         return lastDate;
     }
 
@@ -43,7 +42,7 @@ public class Contact {
         return server;
     }
 
-    public void setId(String id) {
+    public void setId(@NonNull String id) {
         this.id = id;
     }
 
@@ -58,11 +57,8 @@ public class Contact {
     public void setLastMsg(String lastMsg) {
         this.lastMsg = lastMsg;
     }
-    public ImageView getProfilePic(){
-        return this.profilePic;
-    }
 
-    public void setLastDate(Date lastDate) {
+    public void setLastDate(String lastDate) {
         this.lastDate = lastDate;
     }
 }
