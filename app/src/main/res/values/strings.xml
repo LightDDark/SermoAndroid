@@ -15,10 +15,10 @@
         <string name="prompt_nickname">Nickname</string>
         <string name="action_sign_in">Sign in </string>
         <string name="action_Register">register </string>
-
+    <string name="action_addContact">new contact</string>
         <string name="action_sign_in_short">Sign in</string>
         <string name="welcome">"Welcome !"</string>
-        <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_username">Not a valid username</string>
         <string name="invalid_password">Password must be >5 characters</string>
         <string name="login_failed">"Login failed"</string>
     <string name="channel_intent">com.sermo.broadcast.NEW_MESSAGE</string>

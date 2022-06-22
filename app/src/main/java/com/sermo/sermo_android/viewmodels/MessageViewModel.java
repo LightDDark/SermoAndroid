@@ -7,17 +7,14 @@ import com.sermo.sermo_android.IO.OutMessage;
 import com.sermo.sermo_android.enteties.Message;
 import com.sermo.sermo_android.repositories.MessageRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MessageViewModel extends ViewModel {
     private MessageRepository messageRepository;
     private LiveData<List<Message>> messages;
+    private boolean initialized = false;
 
-    public MessageViewModel(String contactId) {
-        this.messageRepository = new MessageRepository(contactId);
-        this.messages = messageRepository.getAll();
-    }
+    public MessageViewModel() {}
 
     public LiveData<List<Message>> getMessages() {
         return messages;
@@ -29,5 +26,13 @@ public class MessageViewModel extends ViewModel {
 
     public void reload() {
         messageRepository.reload();
+    }
+
+    public void initialize(String contactId) {
+        if (!initialized) {
+            initialized = true;
+            this.messageRepository = new MessageRepository(contactId);
+            this.messages = messageRepository.getAll();
+        }
     }
 }
