@@ -43,7 +43,11 @@ public class ContactsActivity extends AppCompatActivity {
         contactViewModel.getContacts().observe(this, new Observer<List<Contact>>() {
             @Override
             public void onChanged(List<Contact> cons) {
-                contacts.addAll(cons);
+                contacts = cons;
+                ContactAdapter adapter1 = new ContactAdapter(ContactsActivity.this,contacts);
+                // Attach the adapter to the recyclerview to populate items
+                recycleViewContacts.setAdapter(adapter1);
+                // Set layout manager to position the items
             }
         });
         addContact = (Button) findViewById(R.id.btn_addCon);
@@ -54,7 +58,7 @@ public class ContactsActivity extends AppCompatActivity {
             contactIntent.putExtras(b);
             startActivity(contactIntent);
         });
-        settings = (Button) findViewById(R.id.btn_settings);
+        settings = (Button) findViewById(R.id.btn_set);
         settings.setOnClickListener(v -> {
             Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);

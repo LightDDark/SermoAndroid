@@ -2,6 +2,7 @@ package com.sermo.sermo_android.api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -50,15 +51,19 @@ public class ContactAPI {
          @Override
          public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
 
-             new Thread(() -> {
+             if (response.body() != null) {
                  dao.clear();
                  dao.insert(response.body().toArray(new Contact[0]));
+
+             }
                  contactListData.postValue(dao.index());
-                 }).start();
          }
 
                  @Override
-         public void onFailure(Call<List<Contact>> call, Throwable t) {}
+         public void onFailure(Call<List<Contact>> call, Throwable t) {
+
+                     contactListData.postValue(dao.index());
+                 }
          });
      }
 

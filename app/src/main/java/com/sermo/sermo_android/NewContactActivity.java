@@ -26,10 +26,10 @@ public class NewContactActivity extends AppCompatActivity {
         newNickname = (EditText) findViewById(R.id.new_nickname);
         newServer = (EditText) findViewById(R.id.new_server);
         addNew = (Button) findViewById(R.id.btn_add_final_contact);
-//        addNew.setOnClickListener(v -> {
-//            viewModel.add(newId.getText().toString(),newNickname.getText().toString(),newServer.getText().toString());
-//            finish();
-//        });
+        addNew.setOnClickListener(v -> {
+            viewModel.add(newId.getText().toString(),newNickname.getText().toString(),newServer.getText().toString());
+            finish();
+        });
 
     }
 }

@@ -29,7 +29,7 @@
             app:layout_constraintHorizontal_bias="0.938"
             app:layout_constraintStart_toStartOf="parent" />
         <Button
-            android:id="@+id/btn_settings"
+            android:id="@+id/btn_set"
             android:layout_width="151dp"
             android:layout_height="60dp"
             android:layout_gravity="start"
