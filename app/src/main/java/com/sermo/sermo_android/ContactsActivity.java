@@ -30,7 +30,7 @@ public class ContactsActivity extends AppCompatActivity {
     ContactViewModel contactViewModel;
     RecyclerView recycleViewContacts;
     ArrayList<Contact> contacts = new ArrayList<>();
-    Button addContact;
+    Button addContact,settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +48,16 @@ public class ContactsActivity extends AppCompatActivity {
         });
         addContact = (Button) findViewById(R.id.btn_addCon);
         addContact.setOnClickListener(v -> {
-            Intent clickIntent = new Intent(this, NewContactActivity.class);
+            Intent contactIntent = new Intent(this, NewContactActivity.class);
             Bundle b = new Bundle();
             b.putSerializable("vm", contactViewModel);
-            clickIntent.putExtras(b);
-            startActivity(clickIntent);
+            contactIntent.putExtras(b);
+            startActivity(contactIntent);
+        });
+        settings = (Button) findViewById(R.id.btn_settings);
+        settings.setOnClickListener(v -> {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
         });
         recycleViewContacts.setLayoutManager(new LinearLayoutManager(this));
         recycleViewContacts.setHasFixedSize(true);
