@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="..\:/Users/myavr/AndroidStudioProjects/Sermo_Android/app/src/main/res/layout/contacts_layout.xml" value="0.20606884057971014" />
+        <entry key="..\:/Users/myavr/AndroidStudioProjects/Sermo_Android/app/src/main/res/layout/settings_activity.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/chat_background_background.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/profilePic_background.xml" value="0.2445" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />

@@ -1,6 +1,5 @@
 package com.sermo.sermo_android.repositories;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Room;
 
@@ -45,7 +44,7 @@ public class ContactRepository {
         }
     }
 
-    public LiveData<List<Contact>> getAll() {
+    public MutableLiveData<List<Contact>> getAll() {
         return contactListData;
     }
 

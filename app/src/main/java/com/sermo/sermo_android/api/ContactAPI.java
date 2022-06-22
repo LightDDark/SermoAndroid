@@ -31,9 +31,12 @@ public class ContactAPI {
      public ContactAPI(MutableLiveData<List<Contact>> contactListData, ContactDao dao) {
          this.contactListData = contactListData;
          this.dao = dao;
+         Context context = MyApplication.context;
+         SharedPreferences sharedPref = context.getSharedPreferences(
+                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
          OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
          retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                  .client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -64,7 +67,7 @@ public class ContactAPI {
          SharedPreferences sharedPref = context.getSharedPreferences(
                  context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
          String userId = sharedPref.getString(context.getString(R.string.userId), "");
-         String userServer = context.getString(R.string.BaseUrl);
+         String userServer = sharedPref.getString(context.getString(R.string.userServer), "");
          OutInvite invitation = new OutInvite(userId, contact.getId(), userServer);
          webServiceAPI.addContact(contact);
          retrofit = new Retrofit.Builder()

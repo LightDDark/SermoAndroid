@@ -25,8 +25,11 @@ public class LoginAPI {
 
     public LoginAPI(MutableLiveData<Boolean> loginStatus) {
         this.loginStatus = loginStatus;
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -66,7 +69,7 @@ public class LoginAPI {
         String token = sharedPref.getString(context.getString(R.string.Firebase), "");
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())

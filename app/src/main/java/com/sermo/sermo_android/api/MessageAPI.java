@@ -34,9 +34,12 @@ public class MessageAPI {
     public MessageAPI(MutableLiveData<List<Message>> messageListData, MessageDao dao) {
         this.messageListData = messageListData;
         this.dao = dao;
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
