@@ -2,7 +2,6 @@ package com.sermo.sermo_android.api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -24,63 +23,64 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ContactAPI {
-     Retrofit retrofit;
-     WebServiceAPI webServiceAPI;
-     private MutableLiveData<List<Contact>> contactListData;
-     private ContactDao dao;
+    Retrofit retrofit;
+    WebServiceAPI webServiceAPI;
+    private MutableLiveData<List<Contact>> contactListData;
+    private ContactDao dao;
 
-     public ContactAPI(MutableLiveData<List<Contact>> contactListData, ContactDao dao) {
-         this.contactListData = contactListData;
-         this.dao = dao;
-         Context context = MyApplication.context;
-         SharedPreferences sharedPref = context.getSharedPreferences(
-                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
-         retrofit = new Retrofit.Builder()
+    public ContactAPI(MutableLiveData<List<Contact>> contactListData, ContactDao dao) {
+        this.contactListData = contactListData;
+        this.dao = dao;
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
+        retrofit = new Retrofit.Builder()
                 .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
-                 .client(client)
+                //.client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-         webServiceAPI = retrofit.create(WebServiceAPI.class);
-     }
+        webServiceAPI = retrofit.create(WebServiceAPI.class);
+    }
 
-     public void get() {
-         Call<List<Contact>> call = webServiceAPI.getContacts();
-         call.enqueue(new Callback<List<Contact>>() {
-         @Override
-         public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
+    public void get() {
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String token = sharedPref.getString(context.getString(R.string.token), "default");
+        Call<List<Contact>> call = webServiceAPI.getContacts("bearer "+token);
+        call.enqueue(new Callback<List<Contact>>() {
+            @Override
+            public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
 
-             if (response.body() != null) {
-                 dao.clear();
-                 dao.insert(response.body().toArray(new Contact[0]));
+                new Thread(() -> {
+                    dao.clear();
+                    dao.insert(response.body().toArray(new Contact[0]));
+                    contactListData.postValue(dao.index());
+                }).start();
+            }
 
-             }
-                 contactListData.postValue(dao.index());
-         }
+            @Override
+            public void onFailure(Call<List<Contact>> call, Throwable t) {}
+        });
+    }
 
-                 @Override
-         public void onFailure(Call<List<Contact>> call, Throwable t) {
-
-                     contactListData.postValue(dao.index());
-                 }
-         });
-     }
-
-     public void add(OutContact contact) {
-         Context context = MyApplication.context;
-         SharedPreferences sharedPref = context.getSharedPreferences(
-                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-         String userId = sharedPref.getString(context.getString(R.string.userId), "");
-         String userServer = sharedPref.getString(context.getString(R.string.userServer), "");
-         OutInvite invitation = new OutInvite(userId, contact.getId(), userServer);
-         webServiceAPI.addContact(contact);
-         retrofit = new Retrofit.Builder()
-                 .baseUrl(contact.getServer())
-                 .callbackExecutor(Executors.newSingleThreadExecutor())
-                 .addConverterFactory(GsonConverterFactory.create())
-                 .build();
-         retrofit.create(WebServiceAPI.class).invite(invitation);
-         this.get();
-     }
+    public void add(OutContact contact) {
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String token = sharedPref.getString(context.getString(R.string.token), "default");
+        String userId = sharedPref.getString(context.getString(R.string.userId), "");
+        String userServer = sharedPref.getString(context.getString(R.string.userServer), "");
+        OutInvite invitation = new OutInvite(userId, contact.getId(), userServer);
+        webServiceAPI.addContact("Bearer "+token,contact);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(contact.getServer())
+                .callbackExecutor(Executors.newSingleThreadExecutor())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        retrofit.create(WebServiceAPI.class).invite(invitation);
+        this.get();
+    }
 }

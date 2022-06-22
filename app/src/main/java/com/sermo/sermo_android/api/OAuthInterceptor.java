@@ -23,7 +23,7 @@ public class OAuthInterceptor implements Interceptor {
         SharedPreferences sharedPref = context.getSharedPreferences(
                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         String token = sharedPref.getString(context.getString(R.string.token), "default");
-        request = request.newBuilder().header("Authorization", "bearer " + token).build();
+        request = request.newBuilder().addHeader("Authorization", "Bearer " + token).build();
         return chain.proceed(request);
     }
 }
