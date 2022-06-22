@@ -148,3 +148,11 @@ C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\obj\Debug\net6
 C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\obj\Debug\net6.0\SermoAPI.pdb
 C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\obj\Debug\net6.0\SermoAPI.genruntimeconfig.cache
 C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\obj\Debug\net6.0\ref\SermoAPI.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\FirebaseAdmin.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Google.Api.Gax.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Google.Api.Gax.Rest.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Google.Apis.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Google.Apis.Auth.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Google.Apis.Core.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\Sermo\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll

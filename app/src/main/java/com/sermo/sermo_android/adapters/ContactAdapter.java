@@ -51,7 +51,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             //holder.contactName.setText(contact.getName());
             holder.contactCard.setText(contact.getName());
             holder.contactCard.setOnClickListener(v -> {
-                //Log.d("hi", "Element " + holder.getAdapterPosition() + " clicked.");
                 Intent clickIntent = new Intent(v.getContext(), MessageActivity.class);
                 v.getContext().startActivity(clickIntent);
             });

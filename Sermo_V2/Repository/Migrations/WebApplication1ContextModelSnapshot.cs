@@ -34,6 +34,33 @@ namespace Repository.Migrations
                     b.ToTable("ContactUser");
                 });
 
+            modelBuilder.Entity("Domain.AppMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("LogRefId")
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LogRefId");
+
+                    b.ToTable("AppMessage");
+                });
+
             modelBuilder.Entity("Domain.Contact", b =>
                 {
                     b.Property<string>("Id")
@@ -146,6 +173,9 @@ namespace Repository.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
 
+                    b.Property<string>("FirebaseToken")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -178,6 +208,15 @@ namespace Repository.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Domain.AppMessage", b =>
+                {
+                    b.HasOne("Domain.Log", "Log")
+                        .WithMany("Messages")
+                        .HasForeignKey("LogRefId");
+
+                    b.Navigation("Log");
+                });
+
             modelBuilder.Entity("Domain.Hub.Connection", b =>
                 {
                     b.HasOne("Domain.User", null)
@@ -205,7 +244,7 @@ namespace Repository.Migrations
             modelBuilder.Entity("Domain.Message", b =>
                 {
                     b.HasOne("Domain.Log", "Log")
-                        .WithMany("Messages")
+                        .WithMany()
                         .HasForeignKey("LogRefId");
 
                     b.Navigation("Log");

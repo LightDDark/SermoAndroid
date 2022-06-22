@@ -14,33 +14,29 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.core.motion.utils.Utils;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MessageAdapter extends RecyclerView.Adapter {
+public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
      class IncomingMessageViewHolder extends RecyclerView.ViewHolder{
-        private  TextView contactName;
         private  TextView content;
         private  TextView created;
-        private  ImageView profilePic;
 
-        private IncomingMessageViewHolder(View itemView){
+        IncomingMessageViewHolder(View itemView){
             super(itemView);
-            contactName = (TextView) itemView.findViewById(R.id.contact_nickname);
             content = (TextView) itemView.findViewById(R.id.content);
             created = (TextView) itemView.findViewById(R.id.created);
-            profilePic = (ImageView) itemView.findViewById(R.id.contact_profile);
         }
     }
      class OutgoingMessageViewHolder extends RecyclerView.ViewHolder{
-        private  TextView contactName;
         private  TextView content;
         private  TextView created;
 
-        private OutgoingMessageViewHolder(View itemView){
+        OutgoingMessageViewHolder(View itemView){
             super(itemView);
-            contactName = (TextView) itemView.findViewById(R.id.contact_nickname);
             content = (TextView) itemView.findViewById(R.id.content);
             created = (TextView) itemView.findViewById(R.id.created);
         }
@@ -71,15 +67,14 @@ public class MessageAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Message current = messages.get(position);
         if(current.isSent()) {
-                ((OutgoingMessageViewHolder) holder).contactName.setText(current.getContactId());
-                ((OutgoingMessageViewHolder) holder).content.setText(current.getContent());
-            //((OutgoingMessageViewHolder)holder).created.setText(currentDateTimeString);
+            OutgoingMessageViewHolder vh = (OutgoingMessageViewHolder)holder;
+            vh.content.setText(current.getContent());
+            vh.created.setText(current.getCreated());
             }
             else{
-                ((IncomingMessageViewHolder) holder).contactName.setText(current.getContactId());
-                ((IncomingMessageViewHolder) holder).content.setText(current.getContent());
-            //((IncomingMessageViewHolder)holder).created.setText(currentDateTimeString);
-                //((IncomingMessageViewHolder)holder).profilePic.setImageResource(R.drawable.profile);
+            IncomingMessageViewHolder vh = (IncomingMessageViewHolder)holder;
+            vh.content.setText(current.getContent());
+            vh.created.setText(current.getCreated());
             }
         //String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(current.getCreated());
     }

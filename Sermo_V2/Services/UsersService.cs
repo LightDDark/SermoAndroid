@@ -13,6 +13,7 @@ using Domain;
 using Domain.Out;
 using Repository;
 using Domain.In;
+using FirebaseAdmin.Messaging;
 
 namespace Services
 {
@@ -24,6 +25,33 @@ namespace Services
         public UsersService(WebApplication1Context context)
         {
             _context = context;
+        }
+
+        public async Task<bool?> AddFirebase(string token, string id)
+        {
+            if (_context.User == null)
+            {
+                return null;
+            }
+            var user = await _context.User.FindAsync(id);
+
+            if (user == null)
+            {
+                return false;
+            }
+            user.FirebaseToken = token;
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            return true;
         }
 
         public async Task<bool> UpdateContact(InContact contact, string user)
@@ -100,7 +128,7 @@ namespace Services
                 Log? l = user.Logs.Find(l => l.stringId == Log.LogId(user.Id, x.Id));
                 if (l != null)
                 {
-                    Message? m = l.Messages.FindLast(m => m.Author == x.Id);
+                    AppMessage? m = l.Messages.FindLast(m => m.Author == x.Id);
                     if (m != null)
                     {
                         last = m.Content;
@@ -130,7 +158,7 @@ namespace Services
             Log? l = user.Logs.Find(l => l.stringId == Log.LogId(user.Id, x.Id));
             if (l != null)
             {
-                Message? m = l.Messages.FindLast(m => m.Author == x.Id);
+                AppMessage? m = l.Messages.FindLast(m => m.Author == x.Id);
                 if (m != null)
                 {
                     last = m.Content;
@@ -175,7 +203,7 @@ namespace Services
             }
             if (log.Messages == null)
             {
-                log.Messages = new List<Message>();
+                log.Messages = new List<AppMessage>();
             }
             /*int nextId = 0;
             if (_context.Message != null && _context.Message.Any())
@@ -183,7 +211,7 @@ namespace Services
                 nextId = _context.Message.Max(x => x.Id) + 1;
             }*/
             DateTime date = DateTime.Now;
-            Message m = new Message()
+            AppMessage m = new AppMessage()
             {
                 Content = msg,
                 Created = date,
@@ -259,7 +287,7 @@ namespace Services
             {
                 return null;
             }
-            Message? msg = log.Messages.Find(m => m.Id == msgId);
+            AppMessage? msg = log.Messages.Find(m => m.Id == msgId);
             if (msg == null)
             {
                 return null;
@@ -278,7 +306,7 @@ namespace Services
             {
                 return null;
             }
-            Message? msg = log.Messages.Find(m => m.Id == msgId);
+            AppMessage? msg = log.Messages.Find(m => m.Id == msgId);
             if (msg == null)
             {
                 return null;
@@ -305,6 +333,24 @@ namespace Services
             {
                 return null;
             }
+            User? user = await _context.User.FindAsync(to);
+
+            if (user == null)
+            {
+                return false;
+            }
+
+            if (user.FirebaseToken != null)
+            {
+                FirebaseAdmin.Messaging.Message msg = new FirebaseAdmin.Messaging.Message() 
+                { Data = new Dictionary<string, string> { { "to", to }, { "from", from }, { "content", content } }, Token = user.FirebaseToken,
+                    Notification = new Notification() {Title = from, Body = content } };
+                // Send a message to the device corresponding to the provided
+                // registration token.
+                FirebaseMessaging.DefaultInstance.SendAsync(msg);
+            }
+            
+
             return await AddMessage(to, content, from);
         }
 
@@ -529,7 +575,7 @@ namespace Services
                     log = new Log()
                     {
                         stringId = logId,
-                        Messages = new List<Message>(),
+                        Messages = new List<AppMessage>(),
                         User = user,
                         Contact = contact
                     };
