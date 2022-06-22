@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Sermo_Android</string>
+    <string name="BaseUrl">https://10.0.2.2:7217/api/</string>
     <string name="preference_file_key">com.sermo.sermo_android.PREFERENCE_FILE_KEY</string>
     <string name="userId">userId</string>
     <string name="token">JWTToken</string>
@@ -8,18 +9,18 @@
     <string name="channel_name">Messages</string>
     <string name="channel_description">Sermo app messages</string>
 
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="prompt_confirm_password">Confirm password</string>
-    <string name="prompt_nickname">Nickname</string>
-    <string name="action_sign_in">Sign in </string>
-    <string name="action_Register">register </string>
-
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+        <string name="prompt_email">Email</string>
+        <string name="prompt_password">Password</string>
+        <string name="prompt_confirm_password">Confirm password</string>
+        <string name="prompt_nickname">Nickname</string>
+        <string name="action_sign_in">Sign in </string>
+        <string name="action_Register">register </string>
+    <string name="action_addContact">new contact</string>
+        <string name="action_sign_in_short">Sign in</string>
+        <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+        <string name="invalid_password">Password must be >5 characters</string>
+        <string name="login_failed">"Login failed"</string>
     <string name="channel_intent">com.sermo.broadcast.NEW_MESSAGE</string>
     <string name="title_activity_settings">SettingsActivity</string>
 

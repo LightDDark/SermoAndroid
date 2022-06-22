@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -66,17 +68,18 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Message current = messages.get(position);
+        String YYYYMMDD = current.getCreated().substring(0,10);
+        String hhmm = current.getCreated().substring(11,15);
         if(current.isSent()) {
             OutgoingMessageViewHolder vh = (OutgoingMessageViewHolder)holder;
             vh.content.setText(current.getContent());
-            vh.created.setText(current.getCreated());
+            vh.created.setText(hhmm);
             }
             else{
             IncomingMessageViewHolder vh = (IncomingMessageViewHolder)holder;
             vh.content.setText(current.getContent());
-            vh.created.setText(current.getCreated());
+            vh.created.setText(hhmm);
             }
-        //String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(current.getCreated());
     }
 
     @Override
