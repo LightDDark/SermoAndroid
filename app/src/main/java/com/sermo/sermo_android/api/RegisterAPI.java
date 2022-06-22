@@ -1,5 +1,8 @@
 package com.sermo.sermo_android.api;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.sermo.sermo_android.IO.LoginReq;
@@ -27,8 +30,11 @@ public class RegisterAPI {
 
     public RegisterAPI(CallbackFromRegisterApi callback) {
         this.callback = callback;
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

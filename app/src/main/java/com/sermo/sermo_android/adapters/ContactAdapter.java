@@ -33,8 +33,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         }
     }
     private final LayoutInflater contactLayout;
-    private ArrayList<Contact> contacts;
-    public ContactAdapter(Context context, ArrayList<Contact> contact){
+    private List<Contact> contacts;
+    public ContactAdapter(Context context, List<Contact> contact){
         contactLayout = LayoutInflater.from(context);
         contacts = contact;
     }

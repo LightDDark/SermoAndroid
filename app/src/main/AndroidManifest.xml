@@ -17,20 +17,18 @@
         android:theme="@style/Theme.Sermo_Android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings" />
-
         <service
-            android:name=".PushMessage"
+            android:name=".services.PushMessage"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".NewContactActivity"
             android:exported="false" />

@@ -29,7 +29,7 @@ import java.util.List;
 public class ContactsActivity extends AppCompatActivity {
     ContactViewModel contactViewModel;
     RecyclerView recycleViewContacts;
-    ArrayList<Contact> contacts = new ArrayList<>();
+    List<Contact> contacts = new ArrayList<>();
     Button addContact,settings;
 
     @Override
@@ -60,17 +60,17 @@ public class ContactsActivity extends AppCompatActivity {
             startActivity(settingsIntent);
         });
         recycleViewContacts.setLayoutManager(new LinearLayoutManager(this));
-        recycleViewContacts.setHasFixedSize(true);
+        //recycleViewContacts.setHasFixedSize(true);
         // Listen to notification Broadcast
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(MyApplication.context.getString(R.string.channel_intent));
-        this.registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                contactViewModel.reload();
-            }
-        }, filter);
-        // Initialize contacts
+//        IntentFilter filter = new IntentFilter();
+//        filter.addAction(MyApplication.context.getString(R.string.channel_intent));
+//        this.registerReceiver(new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                contactViewModel.reload();
+//            }
+//        }, filter);
+//        // Initialize contacts
 
         // Create adapter passing in the sample user data
         ContactAdapter adapter = new ContactAdapter(this,contacts);

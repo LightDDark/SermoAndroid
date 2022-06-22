@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.sermo.sermo_android.IO.InToken;
 import com.sermo.sermo_android.IO.LoginReq;
 import com.sermo.sermo_android.MyApplication;
 import com.sermo.sermo_android.R;
@@ -31,8 +32,11 @@ public class LoginAPI {
     }
 
     public LoginAPI(CallbackFromLoginApi callback) {
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -42,26 +46,27 @@ public class LoginAPI {
     }
 
     public void Login(String userId, String password) {
-        Call<String> call = webServiceAPI.login(new LoginReq(userId, password));
-        call.enqueue(new Callback<String>() {
+        Call<InToken> call = webServiceAPI.login(new LoginReq(userId, password));
+        call.enqueue(new Callback<InToken>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<InToken> call, Response<InToken> response) {
                 boolean b = response.isSuccessful();
                 if (b) {
                     Context context = MyApplication.context;
                     SharedPreferences sharedPref = context.getSharedPreferences(
                             context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
-                    String token = response.body();
+                    String token = response.body().getToken();
                     editor.putString(context.getString(R.string.userId), userId);
                     editor.putString(context.getString(R.string.token), token);
                     editor.apply();
                     setFirebase();
+                    callback.onLoginCompleted(b);
                 }
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<InToken> call, Throwable t) {
                 //callback unsuccessful login
                 callback.onLoginCompleted(false);
                 Log.d("LoginAPI", t.getMessage());            }
@@ -75,7 +80,7 @@ public class LoginAPI {
         String token = sharedPref.getString(context.getString(R.string.Firebase), "");
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
         retrofit = new Retrofit.Builder()
-                .baseUrl(MyApplication.context.getString(R.string.BaseUrl))
+                .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
