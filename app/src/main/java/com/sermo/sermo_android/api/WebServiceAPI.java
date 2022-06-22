@@ -2,6 +2,7 @@ package com.sermo.sermo_android.api;
 
 
 import com.sermo.sermo_android.IO.InMessage;
+import com.sermo.sermo_android.IO.InToken;
 import com.sermo.sermo_android.IO.LoginReq;
 import com.sermo.sermo_android.IO.OutContact;
 import com.sermo.sermo_android.IO.OutInvite;
@@ -25,7 +26,7 @@ import retrofit2.http.Path;
 public interface WebServiceAPI {
     // Login & Register
     @POST("users/login")
-    Call<String> login(@Body LoginReq request);
+    Call<InToken> login(@Body LoginReq request);
 
     @POST("users")
     Call<Void> register(@Body RegisterReq request);

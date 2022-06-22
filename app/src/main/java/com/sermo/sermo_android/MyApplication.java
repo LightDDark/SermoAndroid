@@ -14,7 +14,7 @@ public class MyApplication extends Application {
         SharedPreferences sharedPref = context.getSharedPreferences(
                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(context.getString(R.string.userServer), "https://10.0.2.2:7217/api/");
+        editor.putString(context.getString(R.string.userServer), "http://10.0.2.2:7217/api/");
         editor.apply();
     }
 }

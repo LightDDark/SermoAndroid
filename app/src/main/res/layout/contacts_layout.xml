@@ -11,18 +11,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:scrollbars="vertical"
-            tools:context="example.javatpoint.com.recyclerviewlist.MainActivity"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp"
+            app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="114dp"
             tools:listitem="@layout/contact_card_layout" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints" >
-
-        </RelativeLayout>
 
         <Button
             android:id="@+id/btn_addCon"
@@ -31,13 +23,13 @@
             android:layout_gravity="start"
             android:layout_marginBottom="36dp"
             android:enabled="true"
-            android:text="@string/action_addContact"
+            android:text="add contact"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.938"
             app:layout_constraintStart_toStartOf="parent" />
         <Button
-            android:id="@+id/btn_settings"
+            android:id="@+id/btn_set"
             android:layout_width="151dp"
             android:layout_height="60dp"
             android:layout_gravity="start"

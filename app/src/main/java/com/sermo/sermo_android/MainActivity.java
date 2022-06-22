@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn_login = (Button)findViewById(R.id.btn_login);
+        Intent i = new Intent(this, ContactsActivity.class);
 
 
 
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                             "Successful login!",Toast.LENGTH_SHORT).show();
 
                     lvm.resetFlags();
-                    Intent i = new Intent(MainActivity.this, ContactsActivity.class);
                     startActivity(i);
                 }
             }
@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         btn_register.setOnClickListener(v-> {
-            Intent i = new Intent(this, RegisterActivity.class);
-            startActivity(i);
+            Intent in = new Intent(this, RegisterActivity.class);
+            startActivity(in);
         });
 
 

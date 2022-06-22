@@ -29,7 +29,7 @@ import java.util.List;
 public class ContactsActivity extends AppCompatActivity {
     ContactViewModel contactViewModel;
     RecyclerView recycleViewContacts;
-    ArrayList<Contact> contacts = new ArrayList<>();
+    List<Contact> contacts = new ArrayList<>();
     Button addContact,settings;
 
     @Override
@@ -43,7 +43,11 @@ public class ContactsActivity extends AppCompatActivity {
         contactViewModel.getContacts().observe(this, new Observer<List<Contact>>() {
             @Override
             public void onChanged(List<Contact> cons) {
-                contacts.addAll(cons);
+                contacts = cons;
+                ContactAdapter adapter1 = new ContactAdapter(ContactsActivity.this,contacts);
+                // Attach the adapter to the recyclerview to populate items
+                recycleViewContacts.setAdapter(adapter1);
+                // Set layout manager to position the items
             }
         });
         addContact = (Button) findViewById(R.id.btn_addCon);
@@ -54,23 +58,23 @@ public class ContactsActivity extends AppCompatActivity {
             contactIntent.putExtras(b);
             startActivity(contactIntent);
         });
-        settings = (Button) findViewById(R.id.btn_settings);
+        settings = (Button) findViewById(R.id.btn_set);
         settings.setOnClickListener(v -> {
             Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);
         });
         recycleViewContacts.setLayoutManager(new LinearLayoutManager(this));
-        recycleViewContacts.setHasFixedSize(true);
+        //recycleViewContacts.setHasFixedSize(true);
         // Listen to notification Broadcast
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(MyApplication.context.getString(R.string.channel_intent));
-        this.registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                contactViewModel.reload();
-            }
-        }, filter);
-        // Initialize contacts
+//        IntentFilter filter = new IntentFilter();
+//        filter.addAction(MyApplication.context.getString(R.string.channel_intent));
+//        this.registerReceiver(new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                contactViewModel.reload();
+//            }
+//        }, filter);
+//        // Initialize contacts
 
         // Create adapter passing in the sample user data
         ContactAdapter adapter = new ContactAdapter(this,contacts);
