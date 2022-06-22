@@ -1,14 +1,16 @@
 package com.sermo.sermo_android;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.widget.LinearLayout;
-
 
 import com.sermo.sermo_android.adapters.ContactAdapter;
 import com.sermo.sermo_android.enteties.Contact;
@@ -38,6 +40,15 @@ public class ContactsActivity extends AppCompatActivity {
         });
         recycleViewContacts.setLayoutManager(new LinearLayoutManager(this));
         recycleViewContacts.setHasFixedSize(true);
+        // Listen to notification Broadcast
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(MyApplication.context.getString(R.string.channel_intent));
+        this.registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                contactViewModel.reload();
+            }
+        }, filter);
         // Initialize contacts
         contacts.add(new Contact("1","maayan","localhost/1123"));
         contacts.add(new Contact("2","maayan1","localhost/1123"));

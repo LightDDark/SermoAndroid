@@ -16,6 +16,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.sermo.sermo_android.MessageActivity;
 import com.sermo.sermo_android.MyApplication;
 import com.sermo.sermo_android.R;
 
@@ -28,7 +29,7 @@ public class PushMessage extends FirebaseMessagingService {
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         Intent intent = new Intent();
-        intent.setAction("com.sermo.broadcast.NEW_MESSAGE");
+        intent.setAction(MyApplication.context.getString(R.string.channel_intent));
         boolean sent = LocalBroadcastManager.getInstance(MyApplication.context).sendBroadcast(intent);
         if (remoteMessage.getNotification() != null && !sent) {
             createNotificationChannel();
