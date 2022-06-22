@@ -31,6 +31,10 @@ public interface WebServiceAPI {
     @GET("users/{id}")
     Call<LoginReq> getUser(@Path("id") String id);
 
+    // Firebase
+    @POST("users/firebase/{token}")
+    Call<Void> setFirebase(@Path("token") String token);
+
     // Contacts
     @GET("contacts")
     Call<List<Contact>> getContacts();

@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.sermo.sermo_android.IO.OutMessage;
-import com.sermo.sermo_android.enteties.Contact;
 import com.sermo.sermo_android.enteties.Message;
 import com.sermo.sermo_android.repositories.MessageRepository;
 

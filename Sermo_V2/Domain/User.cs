@@ -23,6 +23,8 @@ namespace Domain
         public List<Contact> Contacts { get; set; } = new List<Contact>();
         public List<Log> Logs { get; set; } = new List<Log>();
 
+        public string? FirebaseToken { get; set; }
+
         public ICollection<Connection> Connections { get; set; } = new HashSet<Connection>();
     }
 }

@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SermoAPP
 build_property.RootNamespace = SermoAPP
-build_property.ProjectDir = C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoAPP\
+build_property.ProjectDir = C:\Users\moshe\StudioProjects\SermoAndroid\Sermo_V2\SermoAPP\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoAPP
+build_property.MSBuildProjectDirectory = C:\Users\moshe\StudioProjects\SermoAndroid\Sermo_V2\SermoAPP
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/HomePage/Index.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/HomePage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVBhZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Rating/Create.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Rating/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Rating/Delete.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Rating/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Rating/Details.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Rating/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Rating/Edit.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Rating/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Rating/Index.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Rating/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Rating/search.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Rating/search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXHNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Shared/Error.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/_ViewImports.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/_ViewStart.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/myavr/AndroidStudioProjects/Sermo_Android/Sermo_V2/SermoAPP/Views/Shared/_Layout.cshtml]
+[C:/Users/moshe/StudioProjects/SermoAndroid/Sermo_V2/SermoAPP/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-od93z3assi

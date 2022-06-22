@@ -6,7 +6,7 @@ namespace Domain
         [Key]
         public string stringId { get; set; } = "";
 
-        public List<Message> Messages { get; set; } = new List<Message>();
+        public List<AppMessage> Messages { get; set; } = new List<AppMessage>();
 
         public User User { get; set; }
         public Contact Contact { get; set; }

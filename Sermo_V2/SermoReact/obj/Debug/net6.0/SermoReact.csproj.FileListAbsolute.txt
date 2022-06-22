@@ -10,3 +10,15 @@
 /Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/refint/SermoReact.dll
 /Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/SermoReact.pdb
 /Users/maayan/Projects/Sermo/SermoReact/obj/Debug/net6.0/ref/SermoReact.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\bin\Debug\net6.0\SermoReact.deps.json
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\bin\Debug\net6.0\SermoReact.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\bin\Debug\net6.0\SermoReact.pdb
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.csproj.AssemblyReference.cache
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.AssemblyInfoInputs.cache
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.AssemblyInfo.cs
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.csproj.CoreCompileInputs.cache
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\refint\SermoReact.dll
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\SermoReact.pdb
+C:\Users\myavr\AndroidStudioProjects\Sermo_Android\Sermo_V2\SermoReact\obj\Debug\net6.0\ref\SermoReact.dll

@@ -1,23 +1,22 @@
 package com.sermo.sermo_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.sermo.sermo_android.adapters.MessageAdapter;
 import com.sermo.sermo_android.enteties.Message;
-import com.sermo.sermo_android.viewmodels.MessageViewModel;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class MessageActivity extends AppCompatActivity {
     RecyclerView msgRecycler;
@@ -39,6 +38,15 @@ public class MessageActivity extends AppCompatActivity {
 //                    messageList.addAll(msgList);
 //            }
 //        });
+        // Listen to notification Broadcast
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(MyApplication.context.getString(R.string.channel_intent));
+        this.registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                viewModel.reload();
+            }
+        }, filter);
         //sendButton = (Button)
         messageList.add(new Message(1, "Me","Hello","today",true));
         messageList.add(new Message(2, "Me","Hello2","today",false));
