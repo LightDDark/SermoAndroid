@@ -3,15 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.198" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_login.xml" value="0.17708333333333334" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_message_chat.xml" value="0.2" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_new_contact.xml" value="0.10104166666666667" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/contact_card_layout.xml" value="0.10104166666666667" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/contacts_layout.xml" value="0.264" />
-        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/layout.xml" value="0.2421875" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout-land/contacts_layout.xml" value="0.1" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_message_chat.xml" value="0.2421875" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/activity_register.xml" value="0.10364583333333334" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/contacts_layout.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/fragment_contacts.xml" value="0.228125" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/fragment_message.xml" value="0.11778115501519756" />
+        <entry key="..\:/Users/moshe/StudioProjects/SermoAndroid/app/src/main/res/layout/fragment_messsage.xml" value="0.2421875" />
+        <entry key="app/src/main/res/drawable/add.xml" value="0.1835" />
+        <entry key="app/src/main/res/drawable/chat_background_background.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/profilePic_background.xml" value="0.2445" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_message_chat.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_new_contact.xml" value="0.25181159420289856" />
+        <entry key="app/src/main/res/layout/contact_card_layout.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/contacts_layout.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/reciever_chat.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/sender_chat.xml" value="0.30885416666666665" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.24003623188405798" />
       </map>
     </option>
   </component>

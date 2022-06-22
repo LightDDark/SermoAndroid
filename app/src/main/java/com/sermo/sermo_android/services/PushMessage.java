@@ -16,7 +16,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.sermo.sermo_android.MessageActivity;
+import com.sermo.sermo_android.ContactsActivity;
 import com.sermo.sermo_android.MyApplication;
 import com.sermo.sermo_android.R;
 
@@ -34,7 +34,7 @@ public class PushMessage extends FirebaseMessagingService {
         if (remoteMessage.getNotification() != null && !sent) {
             createNotificationChannel();
             // Create an Intent for the activity you want to start
-            Intent resultIntent = new Intent(this, MessageActivity.class);
+            Intent resultIntent = new Intent(this, ContactsActivity.class);
             resultIntent.putExtra("id", remoteMessage.getData().get("from"));
             // Create the TaskStackBuilder and add the intent, which inflates the back stack
             TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);

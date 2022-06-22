@@ -36,9 +36,6 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MessageActivity"
-            android:exported="false" />
-        <activity
             android:name=".ContactsActivity"
             android:exported="false" />
         <activity

@@ -1,24 +1,23 @@
 package com.sermo.sermo_android.adapters;
-import com.sermo.sermo_android.MessageActivity;
-import com.sermo.sermo_android.R;
-import com.sermo.sermo_android.enteties.Contact;
 
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
+import android.content.res.Configuration;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.sermo.sermo_android.MessageFragment;
+import com.sermo.sermo_android.R;
+import com.sermo.sermo_android.enteties.Contact;
+
+import java.util.List;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
     class ContactViewHolder extends RecyclerView.ViewHolder{
@@ -34,9 +33,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
     }
     private final LayoutInflater contactLayout;
     private List<Contact> contacts;
-    public ContactAdapter(Context context, List<Contact> contact){
-        contactLayout = LayoutInflater.from(context);
+    private FragmentActivity activity;
+
+    public ContactAdapter(FragmentActivity activity, List<Contact> contact){
+        contactLayout = LayoutInflater.from(activity);
         contacts = contact;
+        this.activity = activity;
     }
     @NonNull
     @Override
@@ -51,9 +53,17 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
             //holder.contactName.setText(contact.getName());
             holder.contactCard.setText(contact.getName());
             holder.contactCard.setOnClickListener(v -> {
-                Intent clickIntent = new Intent(v.getContext(), MessageActivity.class);
-                clickIntent.putExtra("id",contact.getId());
-                v.getContext().startActivity(clickIntent);
+                //set messages id bundle
+                Bundle bundle = new Bundle();
+                bundle.putString("id",contact.getId());
+                if (v.getContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    //load messages fragment on main fragment layout
+                   activity.getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment_layout, MessageFragment.class, bundle).commit();
+                } else {
+                    //load messages fragment on second fragment layout
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.second_fragment_layout, MessageFragment.class, bundle).commit();
+                }
+
             });
     }
 

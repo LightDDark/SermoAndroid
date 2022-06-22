@@ -5,41 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/contact_recycler"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
+        <FrameLayout
+            android:id="@+id/main_fragment_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="114dp"
-            tools:listitem="@layout/contact_card_layout" />
-
-
-        <Button
-            android:id="@+id/btn_addCon"
-            android:layout_width="151dp"
-            android:layout_height="60dp"
-            android:layout_gravity="start"
-            android:layout_marginBottom="36dp"
-            android:enabled="true"
-            android:text="add contact"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.938"
-            app:layout_constraintStart_toStartOf="parent" />
-        <Button
-            android:id="@+id/btn_set"
-            android:layout_width="151dp"
-            android:layout_height="60dp"
-            android:layout_gravity="start"
-            android:layout_marginBottom="90dp"
-            android:enabled="true"
-            android:text="Settings"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.938"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
