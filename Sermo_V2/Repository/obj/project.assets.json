@@ -7307,19 +7307,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\myavr\\.nuget\\packages\\": {}
+    "C:\\Users\\moshe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\myavr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\obj\\",
+      "projectPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\moshe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\myavr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moshe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7333,8 +7333,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Domain\\Domain.csproj"
+            "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj"
             }
           }
         }
@@ -7383,8 +7383,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Repository\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
