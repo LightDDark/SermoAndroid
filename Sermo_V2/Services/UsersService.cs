@@ -128,7 +128,7 @@ namespace Services
                 Log? l = user.Logs.Find(l => l.stringId == Log.LogId(user.Id, x.Id));
                 if (l != null)
                 {
-                    Domain.Message? m = l.Messages.FindLast(m => m.Author == x.Id);
+                    AppMessage? m = l.Messages.FindLast(m => m.Author == x.Id);
                     if (m != null)
                     {
                         last = m.Content;
@@ -158,7 +158,7 @@ namespace Services
             Log? l = user.Logs.Find(l => l.stringId == Log.LogId(user.Id, x.Id));
             if (l != null)
             {
-                Domain.Message? m = l.Messages.FindLast(m => m.Author == x.Id);
+                AppMessage? m = l.Messages.FindLast(m => m.Author == x.Id);
                 if (m != null)
                 {
                     last = m.Content;
@@ -203,7 +203,7 @@ namespace Services
             }
             if (log.Messages == null)
             {
-                log.Messages = new List<Domain.Message>();
+                log.Messages = new List<AppMessage>();
             }
             /*int nextId = 0;
             if (_context.Message != null && _context.Message.Any())
@@ -211,7 +211,7 @@ namespace Services
                 nextId = _context.Message.Max(x => x.Id) + 1;
             }*/
             DateTime date = DateTime.Now;
-            Domain.Message m = new Domain.Message()
+            AppMessage m = new AppMessage()
             {
                 Content = msg,
                 Created = date,
@@ -287,7 +287,7 @@ namespace Services
             {
                 return null;
             }
-            Domain.Message? msg = log.Messages.Find(m => m.Id == msgId);
+            AppMessage? msg = log.Messages.Find(m => m.Id == msgId);
             if (msg == null)
             {
                 return null;
@@ -306,7 +306,7 @@ namespace Services
             {
                 return null;
             }
-            Domain.Message? msg = log.Messages.Find(m => m.Id == msgId);
+            AppMessage? msg = log.Messages.Find(m => m.Id == msgId);
             if (msg == null)
             {
                 return null;
@@ -343,7 +343,7 @@ namespace Services
             if (user.FirebaseToken != null)
             {
                 FirebaseAdmin.Messaging.Message msg = new FirebaseAdmin.Messaging.Message() 
-                { Data = new Dictionary<String, String> { { "to", to }, { "from", from }, { "content", content } }, Token = user.FirebaseToken,
+                { Data = new Dictionary<string, string> { { "to", to }, { "from", from }, { "content", content } }, Token = user.FirebaseToken,
                     Notification = new Notification() {Title = from, Body = content } };
                 // Send a message to the device corresponding to the provided
                 // registration token.
@@ -575,7 +575,7 @@ namespace Services
                     log = new Log()
                     {
                         stringId = logId,
-                        Messages = new List<Domain.Message>(),
+                        Messages = new List<AppMessage>(),
                         User = user,
                         Contact = contact
                     };
