@@ -45,7 +45,11 @@ public class ContactAPI {
      }
 
      public void get() {
-         Call<List<Contact>> call = webServiceAPI.getContacts();
+         Context context = MyApplication.context;
+         SharedPreferences sharedPref = context.getSharedPreferences(
+                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+         String token = sharedPref.getString(context.getString(R.string.token), "default");
+         Call<List<Contact>> call = webServiceAPI.getContacts("bearer "+token);
          call.enqueue(new Callback<List<Contact>>() {
          @Override
          public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
@@ -66,10 +70,11 @@ public class ContactAPI {
          Context context = MyApplication.context;
          SharedPreferences sharedPref = context.getSharedPreferences(
                  context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+         String token = sharedPref.getString(context.getString(R.string.token), "default");
          String userId = sharedPref.getString(context.getString(R.string.userId), "");
          String userServer = sharedPref.getString(context.getString(R.string.userServer), "");
          OutInvite invitation = new OutInvite(userId, contact.getId(), userServer);
-         webServiceAPI.addContact(contact);
+         webServiceAPI.addContact("bearer "+token,contact);
          retrofit = new Retrofit.Builder()
                  .baseUrl(contact.getServer())
                  .callbackExecutor(Executors.newSingleThreadExecutor())

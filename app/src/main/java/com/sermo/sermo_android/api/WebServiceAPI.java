@@ -16,6 +16,8 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.HEAD;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -37,35 +39,37 @@ public interface WebServiceAPI {
 
     // Contacts
     @GET("contacts")
-    Call<List<Contact>> getContacts();
+    Call<List<Contact>> getContacts(@Header("Authorization") String token);
 
     @POST("contacts")
-    Call<Void> addContact(@Body OutContact contact);
+    Call<Void> addContact(@Header("Authorization") String token,@Body OutContact contact);
 
     @GET("contacts/{id}")
-    Call<Contact> getContact(@Path("id") String id);
+    Call<Contact> getContact(@Header("Authorization") String token,@Path("id") String id);
 
     @PUT("contacts/{id}")
-    Call<Void> updateContact(@Path("id") String id, @Body OutContact contact);
+    Call<Void> updateContact(@Header("Authorization") String token,@Path("id") String id, @Body OutContact contact);
 
     @DELETE("contacts/{id}")
-    Call<Void> deleteContact(@Path("id") String id);
+    Call<Void> deleteContact(@Header("Authorization") String token,@Path("id") String id);
 
     // Messages
     @GET("contacts/{id}/messages")
-    Call<List<InMessage>> getMessages(@Path("id") String id);
+    Call<List<InMessage>> getMessages(@Header("Authorization") String token,@Path("id") String id);
 
     @POST("contacts/{id}/messages")
-    Call<Void> addMessage(@Path("id") String id, @Body OutMessage msg);
+    Call<Void> addMessage(@Header("Authorization") String token,@Path("id") String id, @Body OutMessage msg);
 
     @GET("contacts/{id}/messages/{id2}")
-    Call<InMessage> getMessage(@Path("id") String contactId, @Path("id2") int msgId);
+    Call<InMessage> getMessage(@Header("Authorization") String token,@Path("id") String contactId, @Path("id2") int msgId);
 
     @PUT("contacts/{id}/messages/{id2}")
-    Call<Void> updateMessage(@Path("id") String contactId, @Path("id2") int msgId, @Body OutMessage msg);
+    Call<Void> updateMessage(@Header("Authorization") String token,
+                             @Path("id") String contactId, @Path("id2") int msgId, @Body OutMessage msg);
 
     @DELETE("contacts/{id}/messages/{id2}")
-    Call<Void> deleteMessage(@Path("id") String contactId, @Path("id2") int msgId);
+    Call<Void> deleteMessage(@Header("Authorization") String token,
+                             @Path("id") String contactId, @Path("id2") int msgId);
 
     // IO
     @POST("invitations")

@@ -48,7 +48,11 @@ public class MessageAPI {
     }
 
     public void get(String contactId) {
-        Call<List<InMessage>> call = webServiceAPI.getMessages(contactId);
+        Context context = MyApplication.context;
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String token = sharedPref.getString(context.getString(R.string.token), "default");
+        Call<List<InMessage>> call = webServiceAPI.getMessages("bearer "+token, contactId);
         call.enqueue(new Callback<List<InMessage>>() {
             @Override
             public void onResponse(Call<List<InMessage>> call, Response<List<InMessage>> response) {
@@ -74,9 +78,10 @@ public class MessageAPI {
         Context context = MyApplication.context;
         SharedPreferences sharedPref = context.getSharedPreferences(
                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        String token = sharedPref.getString(context.getString(R.string.token), "default");
         String userId = sharedPref.getString(context.getString(R.string.userId), "");
         OutTransfer transfer = new OutTransfer(msg.getContent(), userId, contact.getId());
-        webServiceAPI.addMessage(contact.getId(), msg);
+        webServiceAPI.addMessage("bearer "+token,contact.getId(), msg);
         retrofit = new Retrofit.Builder()
                 .baseUrl(contact.getServer())
                 .callbackExecutor(Executors.newSingleThreadExecutor())
