@@ -22,13 +22,13 @@ public class MessageRepository {
     private MessageAPI api;
     private Contact contact;
 
-    public MessageRepository(Contact contact) {
+    public MessageRepository(String contactId) {
         AppDB db = Room.databaseBuilder(MyApplication.context,
                 AppDB.class, "AppDB").build();
         this.dao = db.messageDao();
         this.messageListData = new MessageListData();
         this.api = new MessageAPI(messageListData, dao);
-        this.contact = contact;
+        this.contact = db.contactDao().get(contactId);
     }
 
     class MessageListData extends MutableLiveData<List<Message>> {
