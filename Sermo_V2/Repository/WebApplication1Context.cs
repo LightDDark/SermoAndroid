@@ -22,7 +22,7 @@ namespace Repository
 
         public DbSet<Log>? Log { get; set; }
 
-        public DbSet<Message>? Message { get; set; }
+        public DbSet<AppMessage>? Message { get; set; }
 
         public DbSet<Contact>? Contact { get; set; }
 
