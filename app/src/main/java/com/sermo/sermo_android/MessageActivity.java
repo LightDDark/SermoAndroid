@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,20 +28,28 @@ public class MessageActivity extends AppCompatActivity {
     ArrayList<Message> messageList = new ArrayList<>();
     TextView contactName;
     Button sendButton;
-    //MessageViewModel viewModel;
+    EditText sendBox;
+    MessageViewModel viewModel;
+    String id;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        id = getIntent().getExtras().get("id").toString();
         setContentView(R.layout.activity_message_chat);
-//        viewModel = new ViewModelProvider(this).get(MessageViewModel.class);
-//        viewModel.getMessages().observe(this, new Observer<List<Message>>() {
-//            @Override
-//            public void onChanged(List<Message> msgList) {
-//                    messageList.addAll(msgList);
-//            }
-//        });
-        //sendButton = (Button)
+        viewModel = new ViewModelProvider(this).get(MessageViewModel.class);
+        viewModel.initialize(id);
+        viewModel.getMessages().observe(this, new Observer<List<Message>>() {
+            @Override
+            public void onChanged(List<Message> msgList) {
+                    messageList.addAll(msgList);
+            }
+        });
+        sendButton = (Button) findViewById(R.id.send_button);
+        sendBox = (EditText) findViewById(R.id.write_message);
+        sendButton.setOnClickListener(v -> {
+            viewModel.add(sendBox.getText().toString());
+        });
         messageList.add(new Message(1, "Me","Hello","today",true));
         messageList.add(new Message(2, "Me","Hello2","today",false));
         msgRecycler = (RecyclerView) findViewById(R.id.main_chat);

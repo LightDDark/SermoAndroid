@@ -6,10 +6,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sermo.sermo_android.adapters.ContactAdapter;
 import com.sermo.sermo_android.enteties.Contact;
 import com.sermo.sermo_android.viewmodels.ContactViewModel;
@@ -21,6 +24,7 @@ public class ContactsActivity extends AppCompatActivity {
     ContactViewModel contactViewModel;
     RecyclerView recycleViewContacts;
     ArrayList<Contact> contacts = new ArrayList<>();
+    Button addContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +40,15 @@ public class ContactsActivity extends AppCompatActivity {
                 contacts.addAll(cons);
             }
         });
+        addContact = (Button) findViewById(R.id.btn_addCon);
+        addContact.setOnClickListener(v -> {
+            Intent clickIntent = new Intent(this, NewContactActivity.class);
+            Bundle b = new Bundle();
+            b.putSerializable("vm", contactViewModel);
+            clickIntent.putExtras(b);
+            startActivity(clickIntent);
+        });
         recycleViewContacts.setLayoutManager(new LinearLayoutManager(this));
-        recycleViewContacts.setHasFixedSize(true);
-        // Initialize contacts
-        contacts.add(new Contact("1","maayan","localhost/1123"));
-        contacts.add(new Contact("2","maayan1","localhost/1123"));
-        contacts.add(new Contact("3","maayan2","localhost/1123"));
-        contacts.add(new Contact("4","maayan3","localhost/1123"));
-
         // Create adapter passing in the sample user data
         ContactAdapter adapter = new ContactAdapter(this,contacts);
         // Attach the adapter to the recyclerview to populate items
