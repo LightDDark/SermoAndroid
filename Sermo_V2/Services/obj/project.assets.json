@@ -7089,19 +7089,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\myavr\\.nuget\\packages\\": {}
+    "C:\\Users\\moshe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Services\\Services.csproj",
-      "packagesPath": "C:\\Users\\myavr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Services\\obj\\",
+      "projectPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Services\\Services.csproj",
+      "packagesPath": "C:\\Users\\moshe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\myavr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moshe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7115,8 +7115,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\Repository\\Repository.csproj"
+            "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Repository\\Repository.csproj"
             }
           }
         }
@@ -7161,7 +7161,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
