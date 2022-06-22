@@ -85,6 +85,24 @@ namespace SermoAPI.Controllers
             return Ok(Signin(user));
         }
 
+        [HttpPost("firebase/{token}")]
+        public async Task<IActionResult> AddFirebase(String token)
+        {
+            bool? res = await _service.AddFirebase(token, HttpContext.User.Claims.First().Value);
+            if (res == null)
+            {
+                return Problem("Entity set 'WebApplication1Context.User'  is null.");
+
+            }
+            else if (res == false)
+            {
+                return NotFound();
+
+            }
+
+            return Ok();
+        }
+
 
         private string Signin(LogUser account)
         {

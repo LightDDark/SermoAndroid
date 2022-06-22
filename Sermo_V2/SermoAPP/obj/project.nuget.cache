@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "SV7lTPJ2A5EKHiALrcRFpaWRztFBBfQReMNFl0nm/0JnXJJh3O+j5gXVr3jhUJtEggNlpQ5RDt4jST7yPRw15Q==",
+  "dgSpecHash": "IBNLH6gLrJEtSm6gW4X43NzTpT8aSxEpTzJ9+kzlHpssE3gsEQeTWl66Txt3QPxWf7eql7N7DOPezIr4A5cH2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\myavr\\AndroidStudioProjects\\Sermo_Android\\Sermo_V2\\SermoAPP\\SermoAPP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\myavr\\.nuget\\packages\\firebaseadmin\\2.3.0\\firebaseadmin.2.3.0.nupkg.sha512",
+    "C:\\Users\\myavr\\.nuget\\packages\\google.api.gax\\3.2.0\\google.api.gax.3.2.0.nupkg.sha512",
+    "C:\\Users\\myavr\\.nuget\\packages\\google.api.gax.rest\\3.2.0\\google.api.gax.rest.3.2.0.nupkg.sha512",
+    "C:\\Users\\myavr\\.nuget\\packages\\google.apis\\1.49.0\\google.apis.1.49.0.nupkg.sha512",
+    "C:\\Users\\myavr\\.nuget\\packages\\google.apis.auth\\1.49.0\\google.apis.auth.1.49.0.nupkg.sha512",
+    "C:\\Users\\myavr\\.nuget\\packages\\google.apis.core\\1.49.0\\google.apis.core.1.49.0.nupkg.sha512",
     "C:\\Users\\myavr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\myavr\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\myavr\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
