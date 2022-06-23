@@ -1,17 +1,17 @@
 package com.sermo.sermo_android.IO;
 
 public class InToken {
-    String Token;
+    String token;
 
     public InToken(String token) {
-        Token = token;
+        token = token;
     }
 
     public String getToken() {
-        return Token;
+        return token;
     }
 
     public void setToken(String token) {
-        Token = token;
+        token = token;
     }
 }

@@ -81,16 +81,40 @@ public class ContactAPI {
         String userId = sharedPref.getString(context.getString(R.string.userId), "");
         String userServer = sharedPref.getString(context.getString(R.string.userServer), "");
         OutInvite invitation = new OutInvite(userId, contact.getId(), userServer);
-        webServiceAPI.addContact("Bearer " + token, contact);
-//        retrofit = new Retrofit.Builder()
-//                .baseUrl(contact.getServer())
-//                .callbackExecutor(Executors.newSingleThreadExecutor())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build();
-//        retrofit.create(WebServiceAPI.class).invite(invitation);
-        Log.d(TAG, "add: TRY DAO INSERT");
+        Call<Void> call = webServiceAPI.addContact("Bearer " + token, contact);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.d(TAG, "onResponse: Contact added");
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d(TAG, "onResponse: Unable to add Contact");
+            }
+        });
+        try {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(contact.getServer())
+                    .callbackExecutor(Executors.newSingleThreadExecutor())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            Call<Void> voidCall = retrofit.create(WebServiceAPI.class).invite(invitation);
+            voidCall.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> call, Response<Void> response) {
+                    Log.d(TAG, "onResponse: Invite added");
+                }
+
+                @Override
+                public void onFailure(Call<Void> call, Throwable t) {
+                    Log.d(TAG, "onResponse: Unable to add Invite");
+                }
+            });
+        } catch (Exception e) {
+            // do nothing
+        }
         new Thread(() -> dao.insert(new Contact(contact.getId(), contact.getName(), contact.getServer()))).start();
-        Log.d(TAG, "add: MANAGED DAO INSERT");
         this.get();
     }
 }

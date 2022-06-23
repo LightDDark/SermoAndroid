@@ -50,6 +50,15 @@ namespace Services
             {
                 throw;
             }
+            FirebaseAdmin.Messaging.Message msg = new FirebaseAdmin.Messaging.Message()
+            {
+                Data = new Dictionary<string, string> { { "to", "YOU" }, { "from", "SERVER" }, { "content", "GOOD JOB" } },
+                Token = user.FirebaseToken,
+                Notification = new Notification() { Title = "YOU ADDED TOKE!", Body = "NICE BRO" }
+            };
+            // Send a message to the device corresponding to the provided
+            // registration token.
+            await FirebaseMessaging.DefaultInstance.SendAsync(msg);
 
             return true;
         }

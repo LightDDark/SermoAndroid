@@ -1,11 +1,16 @@
 package com.sermo.sermo_android.api;
 
+import static androidx.constraintlayout.core.motion.MotionPaths.TAG;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.sermo.sermo_android.IO.InToken;
 import com.sermo.sermo_android.IO.LoginReq;
 import com.sermo.sermo_android.MyApplication;
@@ -80,14 +85,29 @@ public class LoginAPI {
         Context context = MyApplication.context;
         SharedPreferences sharedPref = context.getSharedPreferences(
                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        String token = sharedPref.getString(context.getString(R.string.Firebase), "");
-        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new OAuthInterceptor()).build();
+//        String token = sharedPref.getString(context.getString(R.string.Firebase), "");
         retrofit = new Retrofit.Builder()
                 .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
-                .client(client)
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        retrofit.create(WebServiceAPI.class).setFirebase(token);
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                String token = instanceIdResult.getToken();
+                Call<Void> voidCall = retrofit.create(WebServiceAPI.class).setFirebase(token);
+                voidCall.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        Log.d(TAG, "onResponse: Firebase added");
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        Log.d(TAG, "onResponse: Unable to add Firebase");
+                    }
+                });
+            }
+        });
     }
 }

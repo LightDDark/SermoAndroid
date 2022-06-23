@@ -81,8 +81,9 @@ namespace SermoAPI.Controllers
                 return NotFound();
 
             }
-
-            return Ok(Signin(user));
+            string token = Signin(user);
+            InToken inToken = new InToken() { Token = token };
+            return Ok(inToken);
         }
 
         [HttpPost("firebase/{token}")]

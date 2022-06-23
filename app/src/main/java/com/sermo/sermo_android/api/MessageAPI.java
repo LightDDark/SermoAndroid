@@ -66,7 +66,7 @@ public class MessageAPI {
                     List<Message> messages = new ArrayList<>();
                     for (InMessage msg :
                             response.body()) {
-                        messages.add(new Message(msg.getId(), contactId, msg.getContent(), msg.getCreated(), msg.isSent()));
+                        messages.add(new Message(0, contactId, msg.getContent(), msg.getCreated(), msg.isSent()));
                     }
                     dao.clear(contactId);
                     dao.insert(messages.toArray(new Message[0]));
@@ -89,14 +89,38 @@ public class MessageAPI {
         String token = sharedPref.getString(context.getString(R.string.token), "default");
         String userId = sharedPref.getString(context.getString(R.string.userId), "");
         OutTransfer transfer = new OutTransfer(msg.getContent(), userId, contact.getId());
-        webServiceAPI.addMessage("Bearer " + token, contact.getId(), msg);
+        Call<Void> call = webServiceAPI.addMessage("Bearer " + token, contact.getId(), msg);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.d(TAG, "onResponse: Message added");
+                get(contact.getId());
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.d(TAG, "onResponse: Unable to add Message");
+                get(contact.getId());
+            }
+        });
         try {
             retrofit = new Retrofit.Builder()
                     .baseUrl(contact.getServer())
                     .callbackExecutor(Executors.newSingleThreadExecutor())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            retrofit.create(WebServiceAPI.class).sendMsg(transfer);
+            Call<Void> voidCall = retrofit.create(WebServiceAPI.class).sendMsg(transfer);
+            voidCall.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> call, Response<Void> response) {
+                    Log.d(TAG, "onResponse: Transfer added");
+                }
+
+                @Override
+                public void onFailure(Call<Void> call, Throwable t) {
+                    Log.d(TAG, "onResponse: Unable to add Transfer");
+                }
+            });
         } catch (Exception e) {
             Log.d(TAG, "send: Didn't manage to send Message!");
         }
@@ -107,6 +131,6 @@ public class MessageAPI {
                 messageListData.postValue(dao.getAll(contact.getId()));
             }).start();
         }
-        this.get(contact.getId());
+        //this.get(contact.getId());
     }
 }
