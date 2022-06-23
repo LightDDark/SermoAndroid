@@ -3,7 +3,7 @@ package com.sermo.sermo_android.api;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import androidx.lifecycle.MutableLiveData;
+import androidx.annotation.NonNull;
 
 import com.sermo.sermo_android.IO.LoginReq;
 import com.sermo.sermo_android.IO.RegisterReq;
@@ -45,12 +45,12 @@ public class RegisterAPI {
         Call<Void> call = webServiceAPI.register(new RegisterReq(userId, password, nick));
         call.enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 callback.onRegisterCompleted(response.isSuccessful());
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                 callback.onRegisterCompleted(false);
             }
         });
@@ -60,12 +60,12 @@ public class RegisterAPI {
         Call<LoginReq> call = webServiceAPI.getUser(id);
         call.enqueue(new Callback<LoginReq>() {
             @Override
-            public void onResponse(Call<LoginReq> call, Response<LoginReq> response) {
+            public void onResponse(@NonNull Call<LoginReq> call, @NonNull Response<LoginReq> response) {
 //                idStatus.postValue(!response.isSuccessful());
             }
 
             @Override
-            public void onFailure(Call<LoginReq> call, Throwable t) {
+            public void onFailure(@NonNull Call<LoginReq> call, @NonNull Throwable t) {
             }
         });
     }

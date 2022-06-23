@@ -4,13 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,14 +20,13 @@ import com.sermo.sermo_android.enteties.Message;
 import com.sermo.sermo_android.viewmodels.MessageViewModel;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MessageActivity extends AppCompatActivity {
     RecyclerView msgRecycler;
     MessageAdapter msgAdapter;
     ImageView profilePic;
-    ArrayList<Message> messageList = new ArrayList<>();
+    List<Message> messageList = new ArrayList<>();
     TextView contactName;
     Button sendButton;
     EditText sendBox;
@@ -64,21 +57,18 @@ public class MessageActivity extends AppCompatActivity {
         //sendButton = (Button)
         viewModel = new ViewModelProvider(this).get(MessageViewModel.class);
         viewModel.initialize(id);
-        viewModel.getMessages().observe(this, new Observer<List<Message>>() {
-            @Override
-            public void onChanged(List<Message> msgList) {
-                    messageList.addAll(msgList);
-            }
+        viewModel.getMessages().observe(this, msgList -> {
+            messageList = msgList;
+            msgAdapter = new MessageAdapter(MessageActivity.this, messageList);
+            msgRecycler.setAdapter(msgAdapter);
         });
         sendButton = (Button) findViewById(R.id.send_button);
         sendBox = (EditText) findViewById(R.id.write_message);
-        sendButton.setOnClickListener(v -> {
-            viewModel.add(sendBox.getText().toString());
-        });
+        sendButton.setOnClickListener(v -> viewModel.add(sendBox.getText().toString()));
         msgRecycler = (RecyclerView) findViewById(R.id.main_chat);
         contactName = (TextView) findViewById(R.id.contact_nickname);
         profilePic = (ImageView) findViewById(R.id.contact_profile);
-        contactName.setText(messageList.get(0).getContactId());
+        //contactName.setText(messageList.get(0).getContactId());
         profilePic.setImageResource(R.drawable.profile);
         msgRecycler.setLayoutManager(new LinearLayoutManager(this));
         msgAdapter = new MessageAdapter(this, messageList);

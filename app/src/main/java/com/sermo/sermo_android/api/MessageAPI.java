@@ -1,8 +1,13 @@
 package com.sermo.sermo_android.api;
 
+import static androidx.constraintlayout.core.motion.MotionPaths.TAG;
+
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
+import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
 import com.sermo.sermo_android.IO.InMessage;
@@ -14,6 +19,7 @@ import com.sermo.sermo_android.R;
 import com.sermo.sermo_android.enteties.Message;
 import com.sermo.sermo_android.rooms.MessageDao;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -55,22 +61,24 @@ public class MessageAPI {
         Call<List<InMessage>> call = webServiceAPI.getMessages("bearer "+token, contactId);
         call.enqueue(new Callback<List<InMessage>>() {
             @Override
-            public void onResponse(Call<List<InMessage>> call, Response<List<InMessage>> response) {
-                List<Message> messages = new ArrayList<>();
-                for (InMessage msg:
-                        response.body()) {
-                    messages.add(new Message(msg.getId(), contactId, msg.getContent(), msg.getCreated(), msg.isSent()));
-                }
-
-                new Thread(() -> {
+            public void onResponse(@NonNull Call<List<InMessage>> call, @NonNull Response<List<InMessage>> response) {
+                if (response.body() != null) {
+                    List<Message> messages = new ArrayList<>();
+                    for (InMessage msg :
+                            response.body()) {
+                        messages.add(new Message(msg.getId(), contactId, msg.getContent(), msg.getCreated(), msg.isSent()));
+                    }
                     dao.clear(contactId);
                     dao.insert(messages.toArray(new Message[0]));
-                    messageListData.postValue(dao.getAll(contactId));
-                }).start();
+                }
+                messageListData.postValue(dao.getAll(contactId));
+
             }
 
             @Override
-            public void onFailure(Call<List<InMessage>> call, Throwable t) {}
+            public void onFailure(@NonNull Call<List<InMessage>> call, @NonNull Throwable t) {
+                messageListData.postValue(dao.getAll(contactId));
+            }
         });
     }
 
@@ -81,13 +89,24 @@ public class MessageAPI {
         String token = sharedPref.getString(context.getString(R.string.token), "default");
         String userId = sharedPref.getString(context.getString(R.string.userId), "");
         OutTransfer transfer = new OutTransfer(msg.getContent(), userId, contact.getId());
-        webServiceAPI.addMessage("Bearer "+token,contact.getId(), msg);
-        retrofit = new Retrofit.Builder()
-                .baseUrl(contact.getServer())
-                .callbackExecutor(Executors.newSingleThreadExecutor())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        retrofit.create(WebServiceAPI.class).sendMsg(transfer);
+        webServiceAPI.addMessage("Bearer " + token, contact.getId(), msg);
+        try {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(contact.getServer())
+                    .callbackExecutor(Executors.newSingleThreadExecutor())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            retrofit.create(WebServiceAPI.class).sendMsg(transfer);
+        } catch (Exception e) {
+            Log.d(TAG, "send: Didn't manage to send Message!");
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            new Thread(() -> {
+                dao.insert(new Message(0, contact.getId(), msg.getContent(), LocalDateTime.now().toString(), true));
+                messageListData.postValue(dao.getAll(contact.getId()));
+            }).start();
+        }
         this.get(contact.getId());
     }
 }

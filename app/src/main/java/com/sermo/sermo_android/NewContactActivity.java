@@ -1,11 +1,12 @@
 package com.sermo.sermo_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.sermo.sermo_android.viewmodels.ContactViewModel;
 
@@ -19,7 +20,8 @@ public class NewContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
-        viewModel = (ContactViewModel) bundle.getSerializable("vm");
+//        viewModel = (ContactViewModel) bundle.getSerializable("vm");
+        viewModel = new ViewModelProvider(this).get(ContactViewModel.class);
         setContentView(R.layout.activity_new_contact);
         this.setTitle("Add New Contact");
         newId = (EditText) findViewById(R.id.new_id);
@@ -27,7 +29,7 @@ public class NewContactActivity extends AppCompatActivity {
         newServer = (EditText) findViewById(R.id.new_server);
         addNew = (Button) findViewById(R.id.btn_add_final_contact);
         addNew.setOnClickListener(v -> {
-            viewModel.add(newId.getText().toString(),newNickname.getText().toString(),newServer.getText().toString());
+            viewModel.add(newId.getText().toString(), newNickname.getText().toString(), newServer.getText().toString());
             finish();
         });
 

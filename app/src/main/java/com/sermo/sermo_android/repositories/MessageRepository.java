@@ -28,7 +28,7 @@ public class MessageRepository {
         this.dao = db.messageDao();
         this.messageListData = new MessageListData();
         this.api = new MessageAPI(messageListData, dao);
-        this.contact = db.contactDao().get(contactId);
+        new Thread(() -> this.contact = db.contactDao().get(contactId)).start();
     }
 
     class MessageListData extends MutableLiveData<List<Message>> {
@@ -42,10 +42,12 @@ public class MessageRepository {
         protected void onActive() {
             super.onActive();
 
-            new Thread(() -> {
-                messageListData.postValue(dao.getAll(contact.getId()));
-                api.get(contact.getId());
-            }).start();
+            if (contact != null) {
+                new Thread(() -> {
+                    messageListData.postValue(dao.getAll(contact.getId()));
+                    api.get(contact.getId());
+                }).start();
+            }
         }
     }
 

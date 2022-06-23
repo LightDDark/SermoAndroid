@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj": {}
+    "C:\\Users\\OrAvraham\\Desktop\\ssssss\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj": {
+    "C:\\Users\\OrAvraham\\Desktop\\ssssss\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\OrAvraham\\Desktop\\ssssss\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\moshe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\moshe\\StudioProjects\\SermoAndroid\\Sermo_V2\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\OrAvraham\\Desktop\\ssssss\\SermoAndroid\\Sermo_V2\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\OrAvraham\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\OrAvraham\\Desktop\\ssssss\\SermoAndroid\\Sermo_V2\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\moshe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OrAvraham\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,7 +46,7 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Microsoft.AspNetCore.Mvc.ViewFeatures": {
               "target": "Package",
@@ -56,11 +56,15 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.5, )"
+              "version": "[6.0.6, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.1, )"
             }
           },
           "imports": [
@@ -78,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import androidx.lifecycle.MutableLiveData;
+import androidx.annotation.NonNull;
 
 import com.sermo.sermo_android.IO.InToken;
 import com.sermo.sermo_android.IO.LoginReq;
@@ -35,7 +35,9 @@ public class LoginAPI {
         Context context = MyApplication.context;
         SharedPreferences sharedPref = context.getSharedPreferences(
                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().retryOnConnectionFailure(true).build();
         retrofit = new Retrofit.Builder()
+                .client(okHttpClient)
                 .baseUrl(sharedPref.getString(context.getString(R.string.userServer), ""))
                 .callbackExecutor(Executors.newSingleThreadExecutor())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -49,9 +51,9 @@ public class LoginAPI {
         Call<InToken> call = webServiceAPI.login(new LoginReq(userId, password));
         call.enqueue(new Callback<InToken>() {
             @Override
-            public void onResponse(Call<InToken> call, Response<InToken> response) {
+            public void onResponse(@NonNull Call<InToken> call, @NonNull Response<InToken> response) {
                 boolean b = response.isSuccessful();
-                if (b) {
+                if (b && response.body() != null) {
                     Context context = MyApplication.context;
                     SharedPreferences sharedPref = context.getSharedPreferences(
                             context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
@@ -61,15 +63,16 @@ public class LoginAPI {
                     editor.putString(context.getString(R.string.token), token);
                     editor.apply();
                     setFirebase();
-                    callback.onLoginCompleted(b);
                 }
+                callback.onLoginCompleted(b);
             }
 
             @Override
-            public void onFailure(Call<InToken> call, Throwable t) {
+            public void onFailure(@NonNull Call<InToken> call, @NonNull Throwable t) {
                 //callback unsuccessful login
                 callback.onLoginCompleted(false);
-                Log.d("LoginAPI", t.getMessage());            }
+                Log.d("LoginAPI", t.getMessage());
+            }
         });
     }
 

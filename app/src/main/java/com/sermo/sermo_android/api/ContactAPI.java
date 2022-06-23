@@ -1,8 +1,12 @@
 package com.sermo.sermo_android.api;
 
+import static androidx.constraintlayout.core.motion.MotionPaths.TAG;
+
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
 import com.sermo.sermo_android.IO.OutContact;
@@ -52,17 +56,20 @@ public class ContactAPI {
         Call<List<Contact>> call = webServiceAPI.getContacts("bearer "+token);
         call.enqueue(new Callback<List<Contact>>() {
             @Override
-            public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
+            public void onResponse(@NonNull Call<List<Contact>> call, @NonNull Response<List<Contact>> response) {
 
-                new Thread(() -> {
+                if (response.body() != null) {
                     dao.clear();
                     dao.insert(response.body().toArray(new Contact[0]));
-                    contactListData.postValue(dao.index());
-                }).start();
+                }
+                contactListData.postValue(dao.index());
+
             }
 
             @Override
-            public void onFailure(Call<List<Contact>> call, Throwable t) {}
+            public void onFailure(@NonNull Call<List<Contact>> call, @NonNull Throwable t) {
+                contactListData.postValue(dao.index());
+            }
         });
     }
 
@@ -74,13 +81,16 @@ public class ContactAPI {
         String userId = sharedPref.getString(context.getString(R.string.userId), "");
         String userServer = sharedPref.getString(context.getString(R.string.userServer), "");
         OutInvite invitation = new OutInvite(userId, contact.getId(), userServer);
-        webServiceAPI.addContact("Bearer "+token,contact);
-        retrofit = new Retrofit.Builder()
-                .baseUrl(contact.getServer())
-                .callbackExecutor(Executors.newSingleThreadExecutor())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        retrofit.create(WebServiceAPI.class).invite(invitation);
+        webServiceAPI.addContact("Bearer " + token, contact);
+//        retrofit = new Retrofit.Builder()
+//                .baseUrl(contact.getServer())
+//                .callbackExecutor(Executors.newSingleThreadExecutor())
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        retrofit.create(WebServiceAPI.class).invite(invitation);
+        Log.d(TAG, "add: TRY DAO INSERT");
+        new Thread(() -> dao.insert(new Contact(contact.getId(), contact.getName(), contact.getServer()))).start();
+        Log.d(TAG, "add: MANAGED DAO INSERT");
         this.get();
     }
 }
