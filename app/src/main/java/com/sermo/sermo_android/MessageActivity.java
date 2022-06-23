@@ -25,37 +25,40 @@ public class MessageActivity extends AppCompatActivity {
     RecyclerView msgRecycler;
     MessageAdapter msgAdapter;
     ImageView profilePic;
-    ArrayList<Message> messageList = new ArrayList<>();
+    List<Message> messageList = new ArrayList<>();
     TextView contactName;
     Button sendButton;
     EditText sendBox;
     MessageViewModel viewModel;
     String id;
+    int msgcount = 3;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         id = getIntent().getExtras().get("id").toString();
         setContentView(R.layout.activity_message_chat);
-        viewModel = new ViewModelProvider(this).get(MessageViewModel.class);
-        viewModel.initialize(id);
-        viewModel.getMessages().observe(this, new Observer<List<Message>>() {
-            @Override
-            public void onChanged(List<Message> msgList) {
-                    messageList.addAll(msgList);
-            }
-        });
+//        viewModel = new ViewModelProvider(this).get(MessageViewModel.class);
+//        viewModel.initialize(id);
+//        viewModel.getMessages().observe(this, new Observer<List<Message>>() {
+//            @Override
+//            public void onChanged(List<Message> msgList) {
+//                    messageList.addAll(msgList);
+//            }
+//        });
         sendButton = (Button) findViewById(R.id.send_button);
         sendBox = (EditText) findViewById(R.id.write_message);
         sendButton.setOnClickListener(v -> {
-            viewModel.add(sendBox.getText().toString());
+            //viewModel.add(sendBox.getText().toString());
+            messageList.add(new Message(msgcount,id,sendBox.getText().toString(),"2022-06-22T05:32:15.063Z",true));
+            msgcount++;
         });
-        messageList.add(new Message(1, "Me","Hello","today",true));
-        messageList.add(new Message(2, "Me","Hello2","today",false));
+        messageList.add(new Message(1, "Alice","Hello","2022-06-22T05:32:15.063Z",true));
+        messageList.add(new Message(2, "Me","Hello2","2022-06-22T05:32:15.063Z",false));
         msgRecycler = (RecyclerView) findViewById(R.id.main_chat);
         contactName = (TextView) findViewById(R.id.contact_nickname);
         profilePic = (ImageView) findViewById(R.id.contact_profile);
-        contactName.setText(messageList.get(0).getContactId());
+        contactName.setText(id);
         profilePic.setImageResource(R.drawable.profile);
         msgRecycler.setLayoutManager(new LinearLayoutManager(this));
         msgAdapter = new MessageAdapter(this, messageList);

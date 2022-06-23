@@ -44,11 +44,10 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
     private final LayoutInflater messageLayout;
-    private ArrayList<Message> messages;
-    public MessageAdapter(Context context, ArrayList<Message> messageList){
+    private List<Message> messages;
+    public MessageAdapter(Context context, List<Message> messageList){
         messageLayout = LayoutInflater.from(context);
-        this.messages = new ArrayList<>();
-        this.messages.addAll(messageList);
+        this.messages = messageList;
     }
     @NonNull
     @Override
